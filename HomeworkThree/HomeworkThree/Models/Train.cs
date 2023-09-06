@@ -11,6 +11,9 @@
 
         public new void Move(float speed) => Console.WriteLine("Train by train");
 
-
+        public override double GetSpeed()
+        {
+            return Speed;
+        }
     }
 }

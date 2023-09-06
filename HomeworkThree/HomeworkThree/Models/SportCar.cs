@@ -23,5 +23,9 @@
             if (speed > 200) Console.WriteLine("YOur car is elusive");
             else Console.WriteLine("Not bad sport car");
         }
+        public override double GetSpeed()
+        {
+            return Speed;
+        }
     }
 }

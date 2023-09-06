@@ -24,5 +24,9 @@ namespace HomeworkThree
             }
             Console.WriteLine("Non-comfortable car");
         }
+        public override double GetSpeed()
+        {
+            return Speed;
+        }
     }
 }

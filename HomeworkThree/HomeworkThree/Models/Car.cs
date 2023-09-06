@@ -29,7 +29,10 @@ namespace HomeworkThree
             Console.WriteLine($"This car has can accelerate to {speed},not bad.");
         }
 
-
+        public override double GetSpeed()
+        {
+            return Speed;
+        }
 
     }
 }

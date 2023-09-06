@@ -8,7 +8,7 @@ namespace HomeworkThree
 {
     public interface IMoveable 
     {
-        public float speed { get; init; }
+        public float Speed { get; set; }
 
         void Move (float speed);
 

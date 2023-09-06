@@ -13,6 +13,9 @@
         {
             Console.WriteLine($"Your Airplane moves on with speed : {speed} and flies at heigst {FlightHeight}");
         }
-
+        public override double GetSpeed()
+        {
+            return Speed;
+        }
     }
 }
