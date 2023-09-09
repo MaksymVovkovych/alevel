@@ -3,8 +3,6 @@
     public class SportCar : Car
     {
 
-
-
         public SportCar(string name, int year, float speed, float weight, bool isRaces) : base(name, year, speed, weight, isRaces)
         {
         }

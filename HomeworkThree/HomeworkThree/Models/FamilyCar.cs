@@ -9,7 +9,6 @@ namespace HomeworkThree
     public class FamilyCar : Car
     {
 
-
         public FamilyCar(string name, int year, float speed, float weight, bool isRaces) : base(name, year, speed, weight, isRaces)
         {
         

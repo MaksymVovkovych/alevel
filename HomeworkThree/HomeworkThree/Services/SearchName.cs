@@ -11,7 +11,7 @@ namespace HomeworkThree
         public static void Search(Dictionary<string,Vehicle> dict)
         {
             var input = Console.ReadLine();
-            if (dict.TryGetValue(input, out Vehicle vehicle1))
+            if (dict.TryGetValue(input!, out Vehicle? vehicle1))
             {
                 Console.WriteLine($"Found vehicle: {vehicle1.Name} ({vehicle1.GetType().Name})");
             }

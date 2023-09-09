@@ -4,7 +4,7 @@
     {
         public string? Name { get; set; }
         public int Year { get; init; }
-        public float Speed { get; init; }
+        public float Speed { get; set; }
         public float Weight { get; init; }
 
         public Vehicle(string name, int year, float speed, float weight)

@@ -9,7 +9,7 @@
             PassengerCapacity = passengerCapacity;
         }
 
-        public new void Move(float speed) => Console.WriteLine("Train by train");
+        public new void Move(float speed) => Console.WriteLine($"Train by train with {speed}");
 
         public override double GetSpeed()
         {
