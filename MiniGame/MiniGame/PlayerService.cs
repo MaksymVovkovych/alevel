@@ -1,6 +1,7 @@
 ﻿using MiniGame.Characters;
 using MiniGame.Enemies;
 using MiniGame.Interfaces;
+using MiniGame.Exceptions;
 
 namespace MiniGame
 {
@@ -14,36 +15,42 @@ namespace MiniGame
             Console.WriteLine("2. BlackWizzard");
             Console.WriteLine("3. Barbarian");
             Console.WriteLine("4. WarriorBarbarian");
-
-            int classChoice;
-            if (int.TryParse(Console.ReadLine(), out classChoice))
+            try
             {
-                switch (classChoice)
+                int classChoice;
+                if (int.TryParse(Console.ReadLine(), out classChoice))
                 {
-                    case 1:
-                        return new Wizzard();
-                    case 2:
-                        return new BlackWizzard();
-                    case 3:
-                        return new Barbarian();
-                    case 4:
-                        return new WarriorBarbarian();
-                    default:
-                        Console.WriteLine("Invalid choice.");
-                        return null;
+                    switch (classChoice)
+                    {
+                        case 1:
+                            return new Wizzard();
+                        case 2:
+                            return new BlackWizzard();
+                        case 3:
+                            return new Barbarian();
+                        case 4:
+                            return new WarriorBarbarian();
+                        default:
+                            throw new InvalidChoiceException("Invalid choice.");
+                    }
+                }
+                else
+                {
+                    throw new InvalidChoiceException("Invalid choice.");
                 }
             }
-            else
+            catch (InvalidChoiceException)
             {
-                Console.WriteLine("Invalid choice.");
-                return null;
+                Action.ErrorAction();
+                Console.WriteLine("Try again");
+                return CreateCharacter();
             }
         }
 
         public IEnemy GenerateEnemy()
         {
             //generate any enemy
-            return new Ghost();
+            return new GhostKing();
         }
     }
 }
