@@ -7,7 +7,6 @@ namespace MiniGame
     {
         public List<Result> logs = new List<Result>();
         private static Logger? _instance;
-        public LogType LogLevel { get; set; } = LogType.Error;
         private Logger() { }
         public static Logger Instance()
         {
