@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Algorithms
+﻿namespace Algorithms
 {
     public static class BinarySearch
     {
-        public static int BinarySearchFunc(int[] sortedArray , int target)
+        public static int BinarySearchFunc(this int[] sortedArray, int target)
         {
             int left = 0;
             int right = sortedArray.Length - 1;
@@ -27,7 +21,6 @@ namespace Algorithms
                 }
             }
             return -1;
-            
         }
     }
 }

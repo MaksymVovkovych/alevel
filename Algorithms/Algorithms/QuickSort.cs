@@ -8,7 +8,7 @@ namespace Algorithms
 {
     public static class QuickSort
     {
-        public static int[]  Sort(int[] collection, int lowwerBound, int upperBound)
+        public static int[] Sort(this int[] collection, int lowwerBound, int upperBound)
         {
             if (lowwerBound < upperBound)
             {
