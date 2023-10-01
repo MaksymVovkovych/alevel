@@ -1,0 +1,3 @@
+﻿using EventHomeTask;
+
+App.Run();
