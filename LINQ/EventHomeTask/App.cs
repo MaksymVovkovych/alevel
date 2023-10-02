@@ -48,7 +48,7 @@ namespace EventHomeTask
 
             receivers[5].ReceiveProduct(items[4]);
 
-            post.Invoke(items[0]);
+            post.Invoke(items[4]);
         }
     }
 }

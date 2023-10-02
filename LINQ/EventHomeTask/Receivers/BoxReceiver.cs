@@ -6,7 +6,8 @@
 
         public override void ReceiveProduct(IItem item)
         {
-            _post.BoxNotify += (sender, e) => Console.WriteLine($"{Name} received book: {item.Name}");
+            _post.BoxNotify += 
+                (sender, e) => Console.WriteLine($"{Name} received box: {item.Name}");
         }
     }
 }

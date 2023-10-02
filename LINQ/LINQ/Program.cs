@@ -86,17 +86,29 @@ var users = new List<User>()
 
 //1
 var first = users.Where(user => 18 < DateTime.Now.Year - user.DateOfBirth.Year).
-    Select(user => new {firstName = user.FirstName, lastName = user.LastName, dateOfBirth = user.DateOfBirth, age = DateTime.Now.Year - user.DateOfBirth.Year });
+    Select(user => new { firstName = user.FirstName, lastName = user.LastName, dateOfBirth = user.DateOfBirth, age = DateTime.Now.Year - user.DateOfBirth.Year });
 foreach (var user in first)
 {
     Console.WriteLine($"User : {user.firstName} {user.lastName} date: {user.dateOfBirth} , now he is {user.age} old");
 }
 
 //2
+var second = users
+           .Select(user => user.Email!.Split('@').LastOrDefault())
+           .GroupBy(domain => domain)
+           .Select(group => new
+           {
+               domain = group.Key,
+               count = group.Count()
+           })
+           .OrderByDescending(group => group.count)
+           .FirstOrDefault();
+
+Console.WriteLine($"{second.domain}, {second.count}");
 
 //3
 Dictionary<Guid, User> third = users.ToDictionary(user => user.Id);
-foreach(KeyValuePair<Guid, User> user in third)
+foreach (KeyValuePair<Guid, User> user in third)
 {
     Console.WriteLine(
             "Key {0}: {1}, {2} pounds",
@@ -108,3 +120,36 @@ foreach(KeyValuePair<Guid, User> user in third)
 }
 
 //4
+var forth = users
+           .GroupBy(user => user.LastName)
+           .ToDictionary(
+               group => group.Key,
+               group => group
+                   .OrderBy(user => user.DateOfBirth)
+                   .Select(user => new
+                   {
+                       user.FirstName,
+                       user.DateOfBirth
+                   })
+                   .ToList()
+           );
+
+foreach (var group in forth)
+{
+    Console.WriteLine($"Last Name: {group.Key}");
+    foreach (var user in group.Value)
+    {
+        Console.WriteLine($"{user.FirstName}, Date of Birth: {user.DateOfBirth}");
+    }
+}
+//FirstOrDefault2
+var user2 = users.FirstOrDefault2(user => user.FirstName == "");
+//SkipWhile2
+var user3 = users.SkipWhile2(user => user.FirstName != "William");
+Console.WriteLine();
+foreach (var user in user3)
+{
+    Console.WriteLine(user.FirstName);
+}
+Console.WriteLine();
+

@@ -8,7 +8,8 @@ namespace EventHomeTask.Receivers
 
         public override void ReceiveProduct(IItem item)
         {
-            _post.DocumentNotify += (sender, e) => Console.WriteLine($"{Name} received document: {item.Name}");
+            _post.DocumentNotify += 
+                (sender, e) => Console.WriteLine($"{Name} received document: {item.Name}");
         }
     }
 }
