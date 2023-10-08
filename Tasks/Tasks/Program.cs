@@ -3,14 +3,18 @@
 using Microsoft.VisualBasic;
 using System.Runtime.CompilerServices;
 using Tasks;
+using Tasks.Part_2;
 
 class Program
 {
    
-     static void Main()
+     static async Task Main()
     {
-        Example1.Run();
-        Example2.RunAsync();
+        ////Part1 
+        // Example1.Run();
+        ////Part2
+        //await FirstTask.RunAsync();
+        //await SecondTask.RunAsync();
     }
     
 }
