@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 
 namespace ContactList
 {
     public class ContactBook : IEnumerable
     {
         private Contact?[] book;
+        object locker = new object();
 
-        public ContactBook(int capacity) 
-        { 
+        public ContactBook(int capacity)
+        {
             book = new Contact?[capacity];
         }
         public Contact? this[int index]
@@ -21,46 +18,63 @@ namespace ContactList
         }
         public void Add(Contact person)
         {
-            for(int i = 0; i < book.Length; i++)
+            lock (locker)
             {
-                //if (book[i] == person)
-                //ex
-                if (book[i] == null)
+                for (int i = 0; i < book.Length; i++)
                 {
-                    book[i] = person;
-                    return;
-                }
+                    //if (book[i] == person)
+                    //ex
+                    if (book[i] == null)
+                    {
+                        book[i] = person;
+                        return;
+                    }
 
+                }
             }
+
         }
-        public void Delete(Contact person)
+        public Contact? Delete(Contact person)
         {
-            if(book == null)
+            if (book == null)
             {
-                return;
+                return null;
             }
             else
             {
-
+                for (int i = 0; i < book.Length; i++)
+                {
+                    if (book[i] == person)
+                    { 
+                        book[i] = null;
+                        return book[i];
+                    }
+                }
+                return null;
             }
         }
-        public void Update(Contact person)
+        public async Task<IEnumerable<Contact?>> FindByNumberAsync(uint number)
         {
-
-        }
-        public Contact?[] GetAll()
-        {
-
-        }
-        public Contact Get(int number)
-        {
-
+            return await Task.Run(() => book.Where(contact => contact?.Number == number).ToList());
         }
 
+        public async Task<IEnumerable<Contact?>> FindByNameAsync(string name)
+        {
+            return await Task.Run(() => book.Where(contact => contact?.Name == name).ToList());
+        }
 
+        public async Task<IEnumerable<Contact?>> FindBySurnameAsync(string surname)
+        {
+            return await Task.Run(() => book.Where(contact => contact?.Surname == surname).ToList());
+        }
+        public IEnumerable<Contact?> GetAllContatcts()
+        {
+            return book;
+        }
         public IEnumerator GetEnumerator()
         {
-            throw new NotImplementedException();
+            var temp = book.OrderBy(conatact => conatact.Name);
+            return temp.GetEnumerator();
         }
     }
 }

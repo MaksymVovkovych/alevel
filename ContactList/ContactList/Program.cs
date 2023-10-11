@@ -1,4 +1,6 @@
 ﻿
 using ContactList;
 
-App.AppContactList();
+var app = new App(new ContactBookServices(new ContactBook(10)));
+
+app.AppContactBook();

@@ -7,9 +7,14 @@ using System.Threading.Tasks;
 
 namespace ContactList
 {
-    public static class App
+    internal  class App
     {
-        public static void AppContactList()
+        private readonly ContactBookServices _contactBookServices;
+        public App(ContactBookServices contactBookServices)
+        {
+            _contactBookServices = contactBookServices;
+        }
+        public  void AppContactBook()
         {
             
         }
