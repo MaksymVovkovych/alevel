@@ -16,25 +16,24 @@ namespace ContactList
             get => book[index];
             set => book[index] = value;
         }
-        public void Add(Contact person)
+        public void Add1(Contact person)
         {
-            lock (locker)
-            {
-                for (int i = 0; i < book.Length; i++)
-                {
-                    //if (book[i] == person)
-                    //ex
-                    if (book[i] == null)
-                    {
-                        book[i] = person;
-                        return;
-                    }
 
+            for (int i = 0; i < book.Length; i++)
+            {
+                if (book[i] == person)
+                    return;
+                //throw ex if exist dublicate
+                //ex
+                if (book[i] == null)
+                {
+                    book[i] = person;
+                    return;
                 }
             }
 
         }
-        public Contact? Delete(Contact person)
+        public Contact? Delete(string name, string surname)
         {
             if (book == null)
             {
@@ -44,28 +43,29 @@ namespace ContactList
             {
                 for (int i = 0; i < book.Length; i++)
                 {
-                    if (book[i] == person)
-                    { 
+                    if (book[i].Name == name && book[i].Surname == surname)
+                    {
                         book[i] = null;
                         return book[i];
+                        //throw ex
                     }
                 }
                 return null;
             }
         }
-        public async Task<IEnumerable<Contact?>> FindByNumberAsync(uint number)
+        public IEnumerable<Contact?> FindByNumberAsync(uint number)
         {
-            return await Task.Run(() => book.Where(contact => contact?.Number == number).ToList());
+            return book.Where(contact => contact?.Number == number).ToList();
         }
 
-        public async Task<IEnumerable<Contact?>> FindByNameAsync(string name)
+        public IEnumerable<Contact?> FindByNameAsync(string name)
         {
-            return await Task.Run(() => book.Where(contact => contact?.Name == name).ToList());
+            return book.Where(contact => contact?.Name == name).ToList();
         }
 
-        public async Task<IEnumerable<Contact?>> FindBySurnameAsync(string surname)
+        public IEnumerable<Contact?> FindBySurnameAsync(string surname)
         {
-            return await Task.Run(() => book.Where(contact => contact?.Surname == surname).ToList());
+            return book.Where(contact => contact?.Surname == surname).ToList();
         }
         public IEnumerable<Contact?> GetAllContatcts()
         {

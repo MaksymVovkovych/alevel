@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ContactList
+﻿namespace ContactList
 {
     public class FileOperations
     {
@@ -17,6 +11,7 @@ namespace ContactList
             this.fileName = fileName;
             _contactBook = contactBook;
         }
+
         public async Task WriteToFileAsync(string fileName)
         {
             fileMutex.WaitOne();
@@ -27,9 +22,15 @@ namespace ContactList
                 {
                     foreach (var contact in contacts)
                     {
-                        await writer.WriteLineAsync($"{contact.Name},{contact.Surname},{contact.Number}");
+                        if (contact == null)
+                            break;
+                        //null ex
+                        if (contact != null)
+                            await writer.WriteLineAsync($"{contact.Name},{contact.Surname},{contact.Number}");
+
                     }
                 }
+                Thread.Sleep(10000);
             }
             finally
             {
@@ -38,27 +39,33 @@ namespace ContactList
 
         }
 
-        public async Task<IEnumerable<Contact>> ReadFromFileAsync(string fileName)
+        public async Task ReadFromFileAsync(string fileName)
         {
+            // Завантажуємо весь вміст файлу асинхронно
+            string fileContent;
             using (var reader = new StreamReader(fileName))
             {
-                string line;
-                while ((line = await reader.ReadLineAsync()) != null)
+                fileContent = await reader.ReadToEndAsync();
+            }
+
+            string[] contactLines = fileContent.Split('\n');
+
+            foreach (var contactLine in contactLines)
+            {
+
+                string[] parts = contactLine.Split(',');
+
+                if (parts.Length == 3)
                 {
-                    string[] parts = line.Split(',');
-                    if (parts.Length == 3)
+                     _contactBook.Add1(new Contact
                     {
-                        _contactBook.Add(new Contact
-                        {
-                            Name = parts[0],
-                            Surname = parts[1],
-                            Number = uint.Parse(parts[2])
-                        });
-                    }// exeption
+                        Name = parts[0],
+                        Surname = parts[1],
+                        Number = uint.Parse(parts[2])
+                    });
                 }
             }
-            var temp = _contactBook.GetAllContatcts();
-            return temp;
         }
+
     }
 }
