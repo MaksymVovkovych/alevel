@@ -1,32 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ContactList
+﻿namespace ContactList
 {
     public class Watcher
     {
         private FileSystemWatcher watcher;
         private string fileName;
 
-        public Watcher(string fileName)
+        public Watcher(string fileName, FileSystemWatcher watcher)
         {
             this.fileName = fileName;
+            this.watcher = watcher;
         }
 
         public void StartWatching()
         {
-            watcher = new FileSystemWatcher(Path.GetDirectoryName(fileName));
-            watcher.Filter = Path.GetFileName(fileName);
-            watcher.Changed += (sender, e) =>
+            if (File.Exists(fileName))
             {
-                Console.WriteLine($"File {fileName} was changed at {e.ChangeType}.");
-            };
-            watcher.EnableRaisingEvents = true;
+                watcher.Filter = Path.GetFileName(fileName);
+                watcher.Changed += (sender, e) =>
+                {
+                    Console.WriteLine($"{fileName} was changed.");
+                };
+                watcher.EnableRaisingEvents = true;
+            }
+            else
+            {
+                throw new FileNotFoundException("File not found");
+            }
         }
-
         public void StopWatching()
         {
             if (watcher != null)

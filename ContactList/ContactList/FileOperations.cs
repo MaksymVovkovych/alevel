@@ -4,66 +4,97 @@
     {
         private readonly ContactBook _contactBook;
         private Mutex fileMutex = new Mutex(false, "appMutex");
-        private string fileName;
+        private bool _flag;
 
-        public FileOperations(string fileName, ContactBook contactBook)
+        public FileOperations(ContactBook contactBook)
         {
-            this.fileName = fileName;
             _contactBook = contactBook;
         }
 
         public async Task WriteToFileAsync(string fileName)
         {
-            fileMutex.WaitOne();
             try
             {
-                var contacts = _contactBook.GetAllContatcts();
-                using (var writer = new StreamWriter(fileName))
+                while (_flag)
                 {
-                    foreach (var contact in contacts)
-                    {
-                        if (contact == null)
-                            break;
-                        //null ex
-                        if (contact != null)
-                            await writer.WriteLineAsync($"{contact.Name},{contact.Surname},{contact.Number}");
-
-                    }
+                    Console.WriteLine("File is closed for writing.");
+                    Thread.Sleep(1000);
                 }
-                Thread.Sleep(10000);
+
+                if (!fileMutex.WaitOne(TimeSpan.FromSeconds(5)))
+                {
+                    throw new MutexException("Unable to acquire mutex for file writing.");
+                }
+
+                _flag = true;
+                try
+                {
+                    var contacts = _contactBook.GetAllContatcts();
+                    using (var writer = new StreamWriter(fileName))
+                    {
+                        foreach (var contact in contacts)
+                        {
+                            if (contact == null)
+                                break;
+                            if (contact != null)
+                                await writer.WriteLineAsync($"{contact.Name},{contact.Surname},{contact.Number}");
+                        }
+                    }
+                    Thread.Sleep(10000);
+                }
+                finally
+                {
+                    fileMutex.ReleaseMutex();
+                    _flag = false;
+                }
             }
-            finally
+            catch (MutexException mutexEx)
             {
-                fileMutex.ReleaseMutex();
+                Console.WriteLine($"Mutex exception: {mutexEx.Message}");
             }
-
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
         }
-
         public async Task ReadFromFileAsync(string fileName)
         {
-            // Завантажуємо весь вміст файлу асинхронно
-            string fileContent;
-            using (var reader = new StreamReader(fileName))
+            try
             {
-                fileContent = await reader.ReadToEndAsync();
-            }
-
-            string[] contactLines = fileContent.Split('\n');
-
-            foreach (var contactLine in contactLines)
-            {
-
-                string[] parts = contactLine.Split(',');
-
-                if (parts.Length == 3)
+                string fileContent;
+                using (var reader = new StreamReader(fileName))
                 {
-                     _contactBook.Add1(new Contact
-                    {
-                        Name = parts[0],
-                        Surname = parts[1],
-                        Number = uint.Parse(parts[2])
-                    });
+                    fileContent = await reader.ReadToEndAsync();
                 }
+
+                string[] contactLines = fileContent.Split('\n');
+
+                foreach (var contactLine in contactLines)
+                {
+                    string[] parts = contactLine.Split(',');
+
+                    if (parts.Length == 3)
+                    {
+                        _contactBook.Add(new Contact
+                        {
+                            Name = parts[0],
+                            Surname = parts[1],
+                            Number = uint.Parse(parts[2])
+                        });
+                    }
+                }
+            }
+            catch (IOException ioEx)
+            {
+                Console.WriteLine($"IO exception: {ioEx.Message}");
+            }
+            catch (FormatException formatEx)
+            {
+                Console.WriteLine($"Format exception: {formatEx.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
             }
         }
 

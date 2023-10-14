@@ -5,8 +5,6 @@ namespace ContactList
     public class ContactBook : IEnumerable
     {
         private Contact?[] book;
-        object locker = new object();
-
         public ContactBook(int capacity)
         {
             book = new Contact?[capacity];
@@ -16,22 +14,20 @@ namespace ContactList
             get => book[index];
             set => book[index] = value;
         }
-        public void Add1(Contact person)
+        public void Add(Contact person)
         {
-
             for (int i = 0; i < book.Length; i++)
             {
-                if (book[i] == person)
-                    return;
-                //throw ex if exist dublicate
-                //ex
                 if (book[i] == null)
                 {
                     book[i] = person;
                     return;
                 }
+                if (book[i].Name == person.Name && book[i].Surname == person.Surname)
+                {
+                    throw new InvalidOperationException("Duplicate contact: " + person.Name + " " + person.Surname);
+                }
             }
-
         }
         public Contact? Delete(string name, string surname)
         {
@@ -39,30 +35,27 @@ namespace ContactList
             {
                 return null;
             }
-            else
+
+            for (int i = 0; i < book.Length; i++)
             {
-                for (int i = 0; i < book.Length; i++)
+                if (book[i] != null && book[i].Name == name && book[i].Surname == surname)
                 {
-                    if (book[i].Name == name && book[i].Surname == surname)
-                    {
-                        book[i] = null;
-                        return book[i];
-                        //throw ex
-                    }
+                    Contact contactToDelete = book[i];
+                    book[i] = null;
+                    return contactToDelete;
                 }
-                return null;
             }
+
+            throw new NullReferenceException("The object does not exist");
         }
         public IEnumerable<Contact?> FindByNumberAsync(uint number)
         {
             return book.Where(contact => contact?.Number == number).ToList();
         }
-
         public IEnumerable<Contact?> FindByNameAsync(string name)
         {
             return book.Where(contact => contact?.Name == name).ToList();
         }
-
         public IEnumerable<Contact?> FindBySurnameAsync(string surname)
         {
             return book.Where(contact => contact?.Surname == surname).ToList();
