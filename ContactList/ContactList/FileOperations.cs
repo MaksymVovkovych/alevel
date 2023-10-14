@@ -15,12 +15,6 @@
         {
             try
             {
-                while (_flag)
-                {
-                    Console.WriteLine("File is closed for writing.");
-                    Thread.Sleep(1000);
-                }
-
                 if (!fileMutex.WaitOne(TimeSpan.FromSeconds(5)))
                 {
                     throw new MutexException("Unable to acquire mutex for file writing.");
