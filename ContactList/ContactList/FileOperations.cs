@@ -4,7 +4,6 @@
     {
         private readonly ContactBook _contactBook;
         private Mutex fileMutex = new Mutex(false, "appMutex");
-        private bool _flag;
 
         public FileOperations(ContactBook contactBook)
         {
@@ -20,7 +19,6 @@
                     throw new MutexException("Unable to acquire mutex for file writing.");
                 }
 
-                _flag = true;
                 try
                 {
                     var contacts = _contactBook.GetAllContatcts();
@@ -39,7 +37,6 @@
                 finally
                 {
                     fileMutex.ReleaseMutex();
-                    _flag = false;
                 }
             }
             catch (MutexException mutexEx)
