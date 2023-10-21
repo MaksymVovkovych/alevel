@@ -1,5 +1,4 @@
-﻿
-namespace HttpWebApi
+﻿namespace HttpWebApi.Repositories
 {
     public class FileRepository
     {

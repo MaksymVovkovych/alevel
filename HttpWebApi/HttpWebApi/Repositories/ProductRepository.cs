@@ -1,7 +1,4 @@
-﻿
-using HttpWebApi.Repositories;
-
-namespace HttpWebApi
+﻿namespace HttpWebApi.Repositories
 {
     public class ProductRepository : IProductRepository
     {

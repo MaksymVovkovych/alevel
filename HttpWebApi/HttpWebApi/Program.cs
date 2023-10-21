@@ -1,5 +1,3 @@
-
-using HttpWebApi;
 using HttpWebApi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
