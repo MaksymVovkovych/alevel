@@ -7,7 +7,7 @@ namespace HttpWebApi
         private Mutex fileMutex = new Mutex(false, "appMutex");
         public Dictionary<Guid, Product> productsDictionary = new Dictionary<Guid, Product>
         {
-            
+
         };
 
         public async Task WriteToFileAsync(string fileName)
@@ -62,8 +62,9 @@ namespace HttpWebApi
                     {
                         if (Guid.TryParse(parts[0], out Guid productId))
                         {
-                            productsDictionary[productId] = new Product//key
+                            productsDictionary[productId] = new Product
                             {
+                                Id = productId,
                                 Name = parts[1],
                                 Category = parts[2],
                                 Count = int.Parse(parts[3])

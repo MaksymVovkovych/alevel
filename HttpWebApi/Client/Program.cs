@@ -1,17 +1,21 @@
 ﻿using Client;
-using System.Net.Http.Json;
 
 using (HttpClient client = new HttpClient())
 {
-    // Set the base address if needed.
     var uri = "https://localhost:7123";
 
-   
+    client.BaseAddress = new Uri(uri);
 
 
-    HttpService.Post(client, uri);
-    
-   
+    await HttpService.Post(client);
+
+    await HttpService.GetMethod(client);
+
+    await HttpService.Delete(client);
+
+
+
+
 }
 
 

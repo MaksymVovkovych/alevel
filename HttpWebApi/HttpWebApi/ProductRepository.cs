@@ -17,7 +17,6 @@ namespace HttpWebApi
             await _products.ReadFromFileAsync(filePath);
             if (_products.productsDictionary.TryGetValue(productId, out var product))
             {
-                product.Id = productId;
                 return (productId, product);
             }
             return null;
@@ -25,14 +24,11 @@ namespace HttpWebApi
         public async Task<IEnumerable<Product?>> GetAsync()
         {
             await _products.ReadFromFileAsync(filePath);
-            return  _products.productsDictionary.Values;    
+            return _products.productsDictionary.Values;
         }
         public async Task<Product?> PostProductAsync(Product product)
         {
-
-            var productId = Guid.NewGuid();
-            product.Id = productId;
-            _products.productsDictionary[productId] = product;
+            _products.productsDictionary[product.Id] = product;
             await _products.WriteToFileAsync(filePath);
             return product;
         }
@@ -48,13 +44,12 @@ namespace HttpWebApi
         }
         public async Task<Product?> DeleteAsync(Guid productId)
         {
-
             if (_products.productsDictionary.TryGetValue(productId, out var product))
             {
                 _products.productsDictionary.Remove(productId);
+                await _products.WriteToFileAsync(filePath);
                 return product;
             }
-            await _products.WriteToFileAsync(filePath);
             return null;
         }
     }

@@ -43,7 +43,6 @@ namespace HttpWebApi.Controllers
                 Category = reqest.Category,
                 Count = reqest.Count
             };
-
             await _prosuctRepository.PostProductAsync(product);
             return StatusCode(201);
         }
@@ -61,20 +60,19 @@ namespace HttpWebApi.Controllers
             product.Result.Value.Item2.Category = request.Category;
             product.Result.Value.Item2.Count = request.Count;
             await _prosuctRepository.UpdateAsync(product.Result.Value.Item2);
-            
+
             return Ok(product.Result.Value.Item2);
         }
 
-[HttpDelete]
+        [HttpDelete]
         public async Task<IActionResult> Delete(Guid Id)
         {
-            var product =  _prosuctRepository.GetProductByIdAsync(Id);
+            var product = _prosuctRepository.GetProductByIdAsync(Id);
             if (product == null)
             {
                 return NotFound();
             }
             await _prosuctRepository.DeleteAsync(Id);
-            
             return Ok();
         }
     }

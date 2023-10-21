@@ -1,23 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Json;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net.Http.Json;
 
 namespace Client
 {
     internal static class HttpService
     {
-        public static void GetMethod(this HttpClient client, string uri)
+        public static async Task GetMethod(this HttpClient client)
         {
-            client.BaseAddress = new Uri(uri);
-
-            HttpResponseMessage response = client.GetAsync("/api/products").Result;
+            HttpResponseMessage response = await client.GetAsync("/api/products");
 
             if (response.IsSuccessStatusCode)
             {
-                string content = response.Content.ReadAsStringAsync().Result;
+                var content = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(content);
             }
             else
@@ -25,15 +18,15 @@ namespace Client
                 Console.WriteLine("Request failed with status code: " + response.StatusCode);
             }
         }
-        public static void GetById(this HttpClient client, string uri)
+        public static async Task GetById(this HttpClient client)
         {
             var gewg = Guid.TryParse(Console.ReadLine(), out Guid Id);
-            client.BaseAddress = new Uri(uri);
-            HttpResponseMessage response = client.GetAsync($"/api/products/{Id}").Result;
+
+            HttpResponseMessage response = await client.GetAsync($"/api/products/{Id}");
 
             if (response.IsSuccessStatusCode)
             {
-                string content = response.Content.ReadAsStringAsync().Result;
+                string content = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(content);
             }
             else
@@ -41,21 +34,20 @@ namespace Client
                 Console.WriteLine("Request failed with status code: " + response.StatusCode);
             }
         }
-        public static void Post(this HttpClient client, string uri)
+        public static async Task Post(this HttpClient client)
         {
-            client.BaseAddress = new Uri(uri);
             var product = new Product()
             {
                 Id = Guid.NewGuid(),
-                Category = "magazine",
-                Name = "VOGUE",
-                Count = 465
+                Category = Console.ReadLine(),
+                Name = Console.ReadLine(),
+                Count = int.Parse(Console.ReadLine())
             };
-            var response = client.PostAsJsonAsync("/api/products", product).Result;
+            var response = await client.PostAsJsonAsync("/api/products", product);
 
             if (response.IsSuccessStatusCode)
             {
-                string content = response.Content.ReadAsStringAsync().Result;
+                string content = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(content);
             }
             else
@@ -63,15 +55,14 @@ namespace Client
                 Console.WriteLine("Request failed with status code: " + response.StatusCode);
             }
         }
-        public static void Delete(this HttpClient client, string uri)
+        public static async Task Delete(this HttpClient client)
         {
             var guid = Guid.TryParse(Console.ReadLine(), out Guid Id);
-            client.BaseAddress = new Uri(uri);
-            HttpResponseMessage response = client.DeleteAsync($"/api/products/{Id}").Result;
+            HttpResponseMessage response = await client.DeleteAsync($"/api/products/{Id}");
 
             if (response.IsSuccessStatusCode)
             {
-                string content = response.Content.ReadAsStringAsync().Result;
+                string content = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(content);
             }
             else
@@ -79,23 +70,23 @@ namespace Client
                 Console.WriteLine("Request failed with status code: " + response.StatusCode);
             }
         }
-        public static void Update(this HttpClient client, string uri)
+        public static async Task Update(this HttpClient client)
         {
-            client.BaseAddress = new Uri(uri);
-            Guid productIdToUpdate = new Guid("...");
+
+            Guid.TryParse(Console.ReadLine(), out Guid Id);
 
             Product updatedProduct = new Product
             {
-                Id = productIdToUpdate,
+                Id = Id,
                 Name = "Product",
                 Category = "Category",
                 Count = 20
             };
 
-            var response = client.PutAsJsonAsync($"/api/products/{productIdToUpdate}", updatedProduct).Result;
+            var response = await client.PutAsJsonAsync($"/api/products", updatedProduct);
             if (response.IsSuccessStatusCode)
             {
-                string content = response.Content.ReadAsStringAsync().Result;
+                string content = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(content);
             }
             else
