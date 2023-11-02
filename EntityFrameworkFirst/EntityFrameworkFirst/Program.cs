@@ -1,4 +1,4 @@
-using EntityFrameworkFirst;
+using EntityFrameworkFirst.Context;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

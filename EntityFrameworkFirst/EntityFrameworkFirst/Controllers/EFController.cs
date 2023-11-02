@@ -1,4 +1,5 @@
-﻿using EntityFrameworkFirst.Entities;
+﻿using EntityFrameworkFirst.Context;
+using EntityFrameworkFirst.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
