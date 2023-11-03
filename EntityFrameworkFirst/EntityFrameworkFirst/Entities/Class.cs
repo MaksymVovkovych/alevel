@@ -1,13 +1,21 @@
-﻿namespace EntityFrameworkFirst.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace EntityFrameworkFirst.Entities
 {
     public class Class
     {
-        public int Id { get; set; }
-        public required string ClassNumber { get; set; }
+        public Guid Id { get; set; }
+        public required int ClassNumber { get; set; }
 
-        public int TeacherId { get; set; }
-        public required Teacher Teacher { get; set; }
+        
+        public Guid TeacherId { get; set; }
+        public Teacher? Teacher { get; set; }
+
+        public Guid SchoolId { get; set; }
+        public School? School { get; set; }
+
         public ICollection<Student>? Students { get; set; }
+
 
     }
 }

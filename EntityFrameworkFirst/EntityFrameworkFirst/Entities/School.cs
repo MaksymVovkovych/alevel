@@ -1,15 +1,12 @@
 ﻿namespace EntityFrameworkFirst.Entities
 {
-    public class Subject
+    public class School
     {
         public Guid Id { get; set; }
-
-        public required string SubjectName { get; set; }
-
+        public required string  CaptionOfSchool { get; set; } 
+        public required string Address { get; set; } 
         public ICollection<Teacher>? Teachers { get; set; }
+        public ICollection<Class>? Classes { get; set; }
         public ICollection<Student>? Students { get; set; }
-
-
-
     }
 }

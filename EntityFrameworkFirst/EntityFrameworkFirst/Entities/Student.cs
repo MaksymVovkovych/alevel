@@ -2,15 +2,22 @@
 {
     public class Student
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public required string Name { get; set; }
 
+        public required string Surname { get; set; }
 
-        public int ClassId { get; set; }
-        public required Class Class { get; set; }
+        public required string Email { get; set; }
 
-        public int TeacherId { get; set; }
-        public required Teacher Teacher { get; set; }
+
+        public Guid ClassId { get; set; }
+        public  Class? Class { get; set; }
+
+        public Guid TeacherId { get; set; }
+        public  Teacher? Teacher { get; set; }
+
+        public Guid SchoolId { get; set; }
+        public  School? School { get; set; }
 
         public ICollection<Subject>? Subjects { get; set; }
     }

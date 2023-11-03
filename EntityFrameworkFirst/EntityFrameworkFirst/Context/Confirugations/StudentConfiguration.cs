@@ -8,9 +8,26 @@ namespace EntityFrameworkFirst.Confirugations
     {
         public void Configure(EntityTypeBuilder<Student> builder)
         {
-            builder.HasMany(x => x.Subjects).WithMany(x => x.Students);
-            builder.HasOne(x => x.Class).WithMany(x => x.Students);
-            builder.HasOne(x => x.Teacher).WithMany(x => x.Students);
+            builder.HasKey(st => st.Id);
+            builder.Property(st => st.Name).IsRequired();
+            builder.Property(st => st.Surname).IsRequired();
+            builder.Property(st => st.Email).IsRequired();
+
+            builder.HasOne(st => st.Class)
+                .WithMany(c => c.Students)
+                .HasForeignKey(st => st.ClassId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasOne(st => st.Teacher)
+                .WithMany(t => t.Students)
+                .HasForeignKey(st => st.TeacherId);
+
+            builder.HasOne(st => st.School)
+                .WithMany(s => s.Students)
+                .HasForeignKey(st => st.SchoolId);
+
+            builder.HasMany(sub => sub.Subjects)
+                .WithMany(st => st.Students);
         }
     }
 }

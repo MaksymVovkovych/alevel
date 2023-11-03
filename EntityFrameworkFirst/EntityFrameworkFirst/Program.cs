@@ -1,5 +1,6 @@
-using EntityFrameworkFirst.Context;
+using EntityFrameworkFirst.Repositories;
 using Microsoft.EntityFrameworkCore;
+using EntityFrameworkFirst.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,9 @@ builder.Services.AddControllers();
 
 builder.Services.AddDbContext<EFContext>(
     option => option.UseSqlServer(builder.Configuration.GetConnectionString(nameof(EFContext))));
+
+builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
