@@ -9,5 +9,6 @@ namespace EntityFrameworkFirst.Domain.Interfaces
         Task DeleteSchoolAsync(School schoolId);
         Task<School> GetSchoolAsync(Guid schoolId);
         Task<IReadOnlyCollection<School>> GetAllSchoolsAsync();
+        Task AddClasses(Guid id, ICollection<Class> classes);
     }
 }

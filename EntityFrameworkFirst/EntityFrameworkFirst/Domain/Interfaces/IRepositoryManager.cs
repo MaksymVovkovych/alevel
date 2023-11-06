@@ -4,10 +4,8 @@
     {
         public IRepositoryClass RepositoryClass { get; }
         public IRepositorySchool RepositorySchool { get; }
-        public IRepositoryStudent RepositoryStudent { get; }
-        public IRepositorySubject RepositorySubject { get; }
-
-        public IRepositoryTeacher RepositoryTeacher { get; }
+        public IRepositoryStaffMember RepositoryStaffMember { get; }
+        public IRepositoryService RepositoryService { get; }
         public IUnitOfWork UnitOfWork { get; }
     }
 }

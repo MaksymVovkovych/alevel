@@ -1,11 +1,12 @@
 ﻿using EntityFrameworkFirst.Domain.Entities;
 using EntityFrameworkFirst.Domain.Interfaces;
 using EntityFrameworkFirst.Infrastructure.Context;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
 namespace EntityFrameworkFirst.Infrastructure.Repositories
 {
-    public class RepositorySchool : RepositoryBase<School> ,IRepositorySchool
+    public class RepositorySchool : RepositoryBase<School>, IRepositorySchool
     {
         public RepositorySchool(EFContext eFContext) : base(eFContext) { }
 
@@ -31,6 +32,15 @@ namespace EntityFrameworkFirst.Infrastructure.Repositories
         public async Task<School?> GetSchoolAsync(Guid schoolId)
         {
             return await FindByConditionAsync(x => x.Id == schoolId).FirstOrDefaultAsync();
+        }
+
+        public async Task AddClasses(Guid id,ICollection<Class> classes)
+        {
+            var school = await GetSchoolAsync(id);
+            if (school == null)
+                return;
+            school.Classes = classes;
+            //await UpdateAsync(school);
         }
     }
 }

@@ -16,24 +16,24 @@ namespace EntityFrameworkFirst.Applicalion.Controllers
         }
 
         [HttpGet]
-
-        public async Task<IActionResult> GetAllSchoolsAsync()
+        public async Task<IActionResult> GetAllAsync()
         {
             var schools = await _repositoryManager.RepositorySchool.GetAllSchoolsAsync();
+            schools.OrderByDescending(sch => sch.CaptionOfSchool);
             return Ok(schools);
         }
-        [HttpGet("id")]
 
-        public async Task<IActionResult> GetSchoolById(Guid schoolId)
+        [HttpGet("id")]
+        public async Task<IActionResult> GetByIdAsync(Guid schoolId)
         {
             var school = await _repositoryManager.RepositorySchool.GetSchoolAsync(schoolId);
             if (school == null)
                 return NotFound();
             return Ok(school);
         }
-        [HttpPost]
 
-        public async Task<IActionResult> PostSchool([FromBody] SchoolDto schoolDto)
+        [HttpPost]
+        public async Task<IActionResult> PostAsync([FromBody] SchoolDto schoolDto)
         {
             var schoolId = Guid.NewGuid();
             var school = new School
@@ -48,8 +48,7 @@ namespace EntityFrameworkFirst.Applicalion.Controllers
         }
 
         [HttpDelete("id")]
-
-        public async Task<IActionResult> DeleteSchool(Guid schoolId)
+        public async Task<IActionResult> DeleteAsync(Guid schoolId)
         {
             var school = await _repositoryManager.RepositorySchool.GetSchoolAsync(schoolId);
             if (school == null)
@@ -59,11 +58,10 @@ namespace EntityFrameworkFirst.Applicalion.Controllers
             return StatusCode(204);
         }
 
-        [HttpPut]
-
-        public async Task<IActionResult> ChangeSchool([FromBody] SchoolDto schoolDto)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> ChangeAsync([FromRoute] Guid id, [FromBody] SchoolDto schoolDto)
         {
-            var school = await _repositoryManager.RepositorySchool.GetSchoolAsync(schoolDto.Id);
+            var school = await _repositoryManager.RepositorySchool.GetSchoolAsync(id);
             if (school == null)
                 return NotFound();
 
@@ -71,5 +69,16 @@ namespace EntityFrameworkFirst.Applicalion.Controllers
             await _repositoryManager.UnitOfWork.SaveChangesAsync();
             return Ok(school);
         }
+
+        [HttpPut("{id}/class")]
+        public async Task<IActionResult> AddCLassesAsync(
+            [FromRoute] Guid id, ICollection<Class> classes
+            )
+        {
+            await _repositoryManager.RepositorySchool.AddClasses(id, classes);
+            await _repositoryManager.UnitOfWork.SaveChangesAsync();
+            return Ok(classes);
+        }
+
     }
 }

@@ -1,8 +1,7 @@
+using EntityFrameworkFirst.Domain.Interfaces;
+using EntityFrameworkFirst.Infrastructure.Context;
 using EntityFrameworkFirst.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
-using EntityFrameworkFirst.Domain.Interfaces;
-
-using EntityFrameworkFirst.Infrastructure.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 

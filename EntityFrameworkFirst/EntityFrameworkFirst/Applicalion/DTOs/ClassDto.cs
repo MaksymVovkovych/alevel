@@ -2,7 +2,7 @@
 {
     public class ClassDto
     {
-        public Guid Id { get; set; }
         public required int ClassNumber { get; set; }
+        public required int Capacity { get; set; }
     }
 }

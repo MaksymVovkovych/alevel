@@ -1,10 +1,11 @@
 ﻿namespace EntityFrameworkFirst.Applicalion.DTOs
 {
-    public class TeacherDto
+    public class StaffMemberDto
     {
-        public Guid Id { get; set; }
         public required string Name { get; set; }
+
         public required string Surname { get; set; }
-        public int Age { get; set; }
+
+        public required string Email { get; set; }
     }
 }

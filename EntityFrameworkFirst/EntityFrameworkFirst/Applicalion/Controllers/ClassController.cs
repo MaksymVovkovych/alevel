@@ -17,40 +17,40 @@ namespace EntityFrameworkFirst.Applicalion.Controllers
 
         [HttpGet]
 
-        public async Task<IActionResult> GetAllClassesAsync()
+        public async Task<IActionResult> GetAllAsync()
         {
             var classes = await _repositoryManager.RepositoryClass.GetAllClassesAsync();
             return Ok(classes);
         }
-        [HttpGet("id")]
 
-        public async Task<IActionResult> GetClassById(Guid id)
+        [HttpGet("id")]
+        public async Task<IActionResult> GetByIdAsync(Guid id)
         {
             var @class = await _repositoryManager.RepositoryClass.GetClassAsync(id);
             if (@class == null)
                 return NotFound();
             return Ok(@class);
         }
-        [HttpPost]
 
-        public async Task<IActionResult> PostClass([FromBody] ClassDto classParamiter)
+        [HttpPost]
+        public async Task<IActionResult> PostAsync([FromBody] ClassDto classParamiter)
         {
             var classId = Guid.NewGuid();
             var @class = new Class
             {
                 Id = classId,
-                ClassNumber = classParamiter.ClassNumber
+                ClassNumber = classParamiter.ClassNumber,
+                Capacity = classParamiter.Capacity,
             };
             await _repositoryManager.RepositoryClass.CreateClassAsync(@class);
             await _repositoryManager.UnitOfWork.SaveChangesAsync();
             return StatusCode(201);
         }
 
-        [HttpPut]
-
-        public async Task<IActionResult> ChangeClass([FromBody] ClassDto classParamiter)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> ChangeAsync([FromRoute] Guid id, [FromBody] ClassDto classParamiter)
         {
-            var @class = await _repositoryManager.RepositoryClass.GetClassAsync(classParamiter.Id);
+            var @class = await _repositoryManager.RepositoryClass.GetClassAsync(id);
             if (@class == null)
                 return NotFound();
 
@@ -60,7 +60,7 @@ namespace EntityFrameworkFirst.Applicalion.Controllers
         }
 
         [HttpDelete("id")]
-        public async Task<IActionResult> DeleteClass(Guid Id)
+        public async Task<IActionResult> DeleteAsync(Guid Id)
         {
             var @class = await _repositoryManager.RepositoryClass.GetClassAsync(Id);
             if (@class == null)

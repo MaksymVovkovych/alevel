@@ -9,20 +9,16 @@ namespace EntityFrameworkFirst.Confirugations
         public void Configure(EntityTypeBuilder<Class> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.Property(c => c.ClassNumber).IsRequired();
+            builder.Property(p => p.ClassNumber).IsRequired();
+            builder.Property(p => p.Capacity).IsRequired();
 
-            builder.HasOne(c => c.Teacher)
-                .WithOne(t => t.Class)
-            .OnDelete(DeleteBehavior.Restrict);
-
-            builder.HasMany(c => c.Students)
-                .WithOne(st => st.Class)
-                .HasForeignKey(st => st.ClassId);
+            builder.HasOne(c => c.Personal)
+                .WithOne(p => p.Class)
+                .HasForeignKey<Class>(c => c.PersonalId);
 
             builder.HasOne(c => c.School)
                 .WithMany(sch => sch.Classes)
                 .HasForeignKey(c => c.SchoolId);
-
         }
     }
 }
