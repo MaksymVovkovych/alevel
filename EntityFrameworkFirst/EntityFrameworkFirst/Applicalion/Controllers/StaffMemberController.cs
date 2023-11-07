@@ -62,7 +62,7 @@ namespace EntityFrameworkFirst.Applicalion.Controllers
 
         [HttpPut("{id}")]
         public async Task<IActionResult> ChangeAsync(
-            [FromRoute]Guid id,
+            [FromRoute] Guid id,
             [FromBody] StaffMemberDto staffMemberDto
             )
         {
@@ -80,7 +80,7 @@ namespace EntityFrameworkFirst.Applicalion.Controllers
 
         [HttpPut("{id}/class")]
         public async Task<IActionResult> AddClassAsync(
-            [FromRoute]Guid id,
+            [FromRoute] Guid id,
             ClassDto @class
             )
         {

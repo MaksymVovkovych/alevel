@@ -61,7 +61,7 @@ namespace EntityFrameworkFirst.Applicalion.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> ChangeAsync([FromRoute]Guid id,[FromBody]ServiceDto serviceDto)
+        public async Task<IActionResult> ChangeAsync([FromRoute] Guid id, [FromBody] ServiceDto serviceDto)
         {
             var service = await _repositoryManager.RepositoryService.GetServiceAsync(id);
             if (service == null)

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EntityFrameworkFirst.Migrations
 {
     [DbContext(typeof(EFContext))]
-    [Migration("20231106121854_Second")]
-    partial class Second
+    [Migration("20231107162603_Azure")]
+    partial class Azure
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
