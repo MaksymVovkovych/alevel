@@ -21,6 +21,7 @@ namespace EntityFrameworkFirst.Applicalion.Controllers
         {
             var classes = await _repositoryManager.RepositoryClass.GetAllClassesAsync();
             return Ok(classes);
+
         }
 
         [HttpGet("id")]

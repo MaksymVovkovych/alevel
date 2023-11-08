@@ -10,7 +10,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<EFContext>(
-    option => option.UseSqlServer(builder.Configuration.GetConnectionString(nameof(EFContext))));
+    option => option.UseSqlServer(builder.Configuration.GetConnectionString(nameof(EFContext)), sqlServerOptionsAction: sqlOptions =>
+    {
+        sqlOptions.EnableRetryOnFailure();
+    }));
 
 builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
 
@@ -25,6 +28,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 
 app.UseHttpsRedirection();
 

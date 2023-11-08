@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace EntityFrameworkFirst.Migrations
 {
     /// <inheritdoc />
-    public partial class Azure : Migration
+    public partial class AZURE : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
