@@ -1,0 +1,12 @@
+ul + p{
+    font-size: 26px;
+}
+
+[href^="https"]{
+    color: red;
+}
+
+.list li:nth-child(4) a {
+    background-color: green;
+}
+
