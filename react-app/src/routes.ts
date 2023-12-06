@@ -1,6 +1,10 @@
 import Home from './pages/Home';
 import Users from './pages/Users';
 import Resources from './pages/Resources';
+import Login from './pages/Login';
+import Registration from './pages/Registration';
+
+
 
 import {FC} from 'react';
 
@@ -34,5 +38,19 @@ export const routes: Array<Route> = [
         enabled: true,
         component: Resources
     },
+    {
+        key: 'login-route',
+        title: 'Login',
+        path: '/Login',
+        enabled: true,
+        component: Login
+    },
+    {
+        key: 'register-route',
+        title: 'Registration',
+        path: '/Registration',
+        enabled: true,
+        component: Registration
+    }
 ]
    

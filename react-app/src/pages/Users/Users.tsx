@@ -1,40 +1,23 @@
-import React, {ReactElement, FC, useEffect, useState} from "react";
+import  {ReactElement, FC} from "react";
 import {Box, CircularProgress, Container, Grid, Pagination} from '@mui/material'
-import * as userApi from "../../api/Users"
-import {IUser} from "../../interfaces/UserInterface";
+import {observer} from 'mobx-react-lite'
 import UserCard from "./components";
+import UsersStore from "./UsersStore";
 
-const Home: FC<any> = (): ReactElement => {
-    const [users, setUsers] = useState<IUser[] | null>(null)
-    const [totalPages, setTotalPages] = useState<number>(0)
-    const [currentPage, setCurrentPage] = useState<number>(1)
-    const [isLoading, setIsLoading] = useState<boolean>(false)
+const userStore = new UsersStore();
 
-    useEffect(() => {
-        const getUser = async () => {
-            try {
-                setIsLoading(true)
-                const res = await userApi.getUsers(currentPage)
-                setUsers(res.data)
-                setTotalPages(res.total_pages)
-            } catch (e) {
-                if (e instanceof Error) {
-                    console.error(e.message)
-                }
-            }
-            setIsLoading(false)
-        }
-        getUser()
-    }, [currentPage])
+const Users: FC<any> = (): ReactElement => {
+
+
 
   return (
       <Container>
           <Grid container spacing={4} justifyContent="center" my={4}>
-              {isLoading ? (
+              {userStore.isLoading ? (
                   <CircularProgress />
               ) : (
                   <>
-                      {users?.map((item) => (
+                      {userStore.users?.map((item) => (
                           <Grid key={item.id} item lg={4} md={4} xs={12}>
                               <UserCard {...item} />
                           </Grid>
@@ -48,10 +31,13 @@ const Home: FC<any> = (): ReactElement => {
                   justifyContent: 'center'
               }}
           >
-              <Pagination sx={{color: "secondary.contrastText"}} count={totalPages} page={currentPage} onChange={ (event, page)=> setCurrentPage(page)} />
+              <Pagination sx={{color: "secondary.contrastText"}}
+               count={userStore.totalPages}
+                page={userStore.currentPage}
+                onChange={ async (event, page)=> await userStore.changePage(page)} />
           </Box>
       </Container>
   );
 };
 
-export default Home;
+export default observer(Users);

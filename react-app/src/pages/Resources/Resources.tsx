@@ -1,40 +1,21 @@
-import React, {ReactElement, FC, useEffect, useState} from "react";
+import  {ReactElement, FC} from "react";
 import {Box, CircularProgress, Container, Grid, Pagination} from '@mui/material'
-import * as userApi from "../../api/Resources"
-import {IRecource} from "../../interfaces/ResourceInterface";
+import {observer} from 'mobx-react-lite'
 import ResourceCard from "./components";
+import ResourcesStore from "./RecourcesStore";
 
-const Home: FC<any> = (): ReactElement => {
-    const [users, setUsers] = useState<IRecource[] | null>(null)
-    const [totalPages, setTotalPages] = useState<number>(0)
-    const [currentPage, setCurrentPage] = useState<number>(1)
-    const [isLoading, setIsLoading] = useState<boolean>(false)
+const resources = new ResourcesStore();
 
-    useEffect(() => {
-        const getUser = async () => {
-            try {
-                setIsLoading(true)
-                const res = await userApi.getResources(currentPage)
-                setUsers(res.data)
-                setTotalPages(res.total_pages)
-            } catch (e) {
-                if (e instanceof Error) {
-                    console.error(e.message)
-                }
-            }
-            setIsLoading(false)
-        }
-        getUser()
-    }, [currentPage])
-
+const Resources: FC<any> = (): ReactElement => {
+   
   return (
       <Container>
           <Grid container spacing={4} justifyContent="center" my={4}>
-              {isLoading ? (
+              {resources.isLoading ? (
                   <CircularProgress />
               ) : (
                   <>
-                      {users?.map((item) => (
+                      {resources.resources?.map((item) => (
                           <Grid key={item.id} item lg={4} md={4} xs={12}>
                               <ResourceCard {...item} />
                           </Grid>
@@ -48,10 +29,12 @@ const Home: FC<any> = (): ReactElement => {
                   justifyContent: 'center'
               }}
           >
-              <Pagination  count={totalPages} page={currentPage} onChange={ (event, page)=> setCurrentPage(page)} />
+              <Pagination count={resources.totalPages}
+                          page={resources.currentPage}
+                          onChange={ async (event, page)=> await resources.changePage(page)} />
           </Box>
       </Container>
   );
 };
 
-export default Home;
+export default observer(Resources);
