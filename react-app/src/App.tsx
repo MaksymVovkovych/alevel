@@ -41,7 +41,7 @@ function App() {
         <contextStore.Provider value={mainContext}>
           <Layout>
             <Routes>
-              {appRoutes.map((route) => (
+              {appRoutes.filter((page)=> page.enabled).map((route) => (
                 <Route
                   key={route.key}
                   path={route.path}
