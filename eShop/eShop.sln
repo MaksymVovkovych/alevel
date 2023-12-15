@@ -3,12 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{931EB91F-08D2-4342-B680-D21014CFB5BF}"
-	ProjectSection(SolutionItems) = preProject
-		docker-compose.yaml = docker-compose.yaml
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog", "Catalog\Catalog.csproj", "{DA98134F-B803-46AF-B128-08E40B4338F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Host", "Catalog\Catalog.Host\Catalog.Host.csproj", "{43075A9A-4029-4D3C-92DF-6768780B6CB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,18 +11,17 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DA98134F-B803-46AF-B128-08E40B4338F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DA98134F-B803-46AF-B128-08E40B4338F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DA98134F-B803-46AF-B128-08E40B4338F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DA98134F-B803-46AF-B128-08E40B4338F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43075A9A-4029-4D3C-92DF-6768780B6CB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43075A9A-4029-4D3C-92DF-6768780B6CB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43075A9A-4029-4D3C-92DF-6768780B6CB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43075A9A-4029-4D3C-92DF-6768780B6CB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{DA98134F-B803-46AF-B128-08E40B4338F3} = {931EB91F-08D2-4342-B680-D21014CFB5BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C53BA931-B1E5-44C3-86EB-7D89CAE79C47}
+		SolutionGuid = {EED44069-2EFF-4082-9D7F-FE917306C538}
 	EndGlobalSection
 EndGlobal
