@@ -13,22 +13,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28184a92-e4c4-4ccd-a5a7-4d2f257528dd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.eShop/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.eShop/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.eShop/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.eShop/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Controllers/ProductController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Product.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eShop.sln" beforeDir="false" afterPath="$PROJECT_DIR$/eShop.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.eShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.eShop/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogBffController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogBffController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogBrandController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogBrandController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogItemController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogItemController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogTypeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogTypeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Data/Entity/CatalogItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Data/Entity/CatalogItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,10 +30,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 1
-}]]></component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2ZZKYBVA0vohBxmWSEPg8HWjMOV" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -52,7 +45,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    ".NET Launch Settings Profile.Catalog.Host: IIS Express.executor": "Debug",
     ".NET Launch Settings Profile.Catalog.Host: https.executor": "Debug",
+    "Docker.Catalog.Host/Dockerfile.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "MSS#1",
@@ -72,51 +67,6 @@
   }
 }]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Catalog.Host: https">
-    <configuration name="Catalog: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Catalog/Catalog.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="Catalog: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Catalog/Catalog.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="http" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="Catalog: https" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Catalog/Catalog.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="https" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
     <configuration name="Catalog.Host: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Catalog/Catalog.Host/Catalog.Host.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -184,7 +134,10 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile" />
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
   </component>
@@ -196,13 +149,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1702624208945</updated>
-      <workItem from="1702624211065" duration="5627000" />
+      <workItem from="1702624211065" duration="10714000" />
+      <workItem from="1702716483790" duration="10078000" />
     </task>
+    <task id="LOCAL-00001" summary="-add domain models&#10;-add configurations for domain model&#10;-add DbContext">
+      <option name="closed" value="true" />
+      <created>1702630046958</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702630046958</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -216,5 +180,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="-add domain models&#10;-add configurations for domain model&#10;-add DbContext" />
+    <option name="LAST_COMMIT_MESSAGE" value="-add domain models&#10;-add configurations for domain model&#10;-add DbContext" />
   </component>
 </project>

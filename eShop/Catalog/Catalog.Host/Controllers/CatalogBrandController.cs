@@ -1,5 +1,6 @@
 ﻿using Catalog.Host.Data;
 using Catalog.Host.Data.Entity;
+using Catalog.Host.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Catalog.Host.Controllers;
@@ -10,16 +11,47 @@ namespace Catalog.Host.Controllers;
 
 public class CatalogBrandController : ControllerBase
 {
-    private readonly AppDbContext _dbContext;
+    private readonly ICatalogBrandRepository _catalogBrandRepository;
 
-    public CatalogBrandController(AppDbContext dbContext)
+    public CatalogBrandController(ICatalogBrandRepository catalogBrandRepository)
     {
-        _dbContext = dbContext;
+        _catalogBrandRepository = catalogBrandRepository;
+
     }
 
-    [HttpGet]
-    public  IActionResult GetBrands()
+    [HttpPost]
+    public async Task<ActionResult<CatalogBrand>> PostBrand([FromBody] CatalogBrand catalogBrand)
     {
-        return Ok(new CatalogBrand(){Id= Guid.NewGuid(), Brand = "Nike"});
+        var guid = Guid.NewGuid();
+        catalogBrand.Id = guid;
+        await _catalogBrandRepository.CreateCatalogBrand(catalogBrand); 
+        return Ok(catalogBrand);
     }
+    
+    [HttpPut]
+    public async Task<ActionResult<CatalogBrand>> PutBrand([FromBody] CatalogBrand catalogBrand)
+    {
+        var brand = await _catalogBrandRepository.GetBrandById(catalogBrand.Id);
+        if (brand == null)
+        {
+            return StatusCode(404);
+        }
+
+        await _catalogBrandRepository.UpdateCatalogBrand(brand);
+        return brand;
+    }
+    
+    [HttpDelete]
+    public async Task<ActionResult<CatalogBrand>> DeleteBrand(Guid id)
+    {
+        var brand = await _catalogBrandRepository.GetBrandById(id);
+        if (brand == null)
+        {
+            return StatusCode(404);
+        }
+
+        await _catalogBrandRepository.DeleteCatalogBrand(brand);
+        return brand;
+    }
+    
 }

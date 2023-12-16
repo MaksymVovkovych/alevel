@@ -12,13 +12,13 @@ public class CatalogItem
 
     public string PictureFileName { get; set; }
 
-    public int CatalogTypeId { get; set; }
+    public Guid? CatalogTypeId { get; set; }
 
-    public CatalogType CatalogType { get; set; }
+    public CatalogType? CatalogType { get; set; }
 
-    public int CatalogBrandId { get; set; }
+    public Guid? CatalogBrandId { get; set; }
 
-    public CatalogBrand CatalogBrand { get; set; }
+    public CatalogBrand? CatalogBrand { get; set; }
 
     public int AvailableStock { get; set; }
 }
