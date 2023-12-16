@@ -20,7 +20,7 @@ public class CatalogItemConfigurations : IEntityTypeConfiguration<CatalogItem>
             .HasMaxLength(50);
             
         builder.Property(i => i.Price);
-        
+
         builder.Property(i => i.PictureFileName)
             .IsRequired(false);
         
@@ -29,10 +29,12 @@ public class CatalogItemConfigurations : IEntityTypeConfiguration<CatalogItem>
 
         builder.HasOne(i => i.CatalogBrand)
             .WithMany()
-            .HasForeignKey(i => i.CatalogBrandId);
+            .HasForeignKey(i => i.CatalogBrandId)
+            .IsRequired(false);;
         
         builder.HasOne(i => i.CatalogType)
             .WithMany()
-            .HasForeignKey(i => i.CatalogTypeId);
+            .HasForeignKey(i => i.CatalogTypeId)
+            .IsRequired(false);;
     }
 }

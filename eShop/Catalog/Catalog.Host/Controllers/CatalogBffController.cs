@@ -26,8 +26,9 @@ public class CatalogBffController : ControllerBase
 
     [HttpGet("Items")]
     public async Task<IEnumerable<CatalogItem>> GetItems()
-    {
+    {  
         return await _catalogItemRepository.GetItems();
+    
     }
     
     [HttpGet("Brands")]
