@@ -11,19 +11,19 @@ public class CatalogTypeRepository : BaseRepository<CatalogType>, ICatalogTypeRe
     {
     }
 
-    public async Task CreateCatalogType(CatalogType type)
+    public async Task<int> CreateCatalogType(CatalogType type)
     {
-        await Create(type);
+        return  await Create(type);
     }
 
-    public async Task DeleteCatalogType(CatalogType type)
+    public async Task<int> DeleteCatalogType(CatalogType type)
     {
-         await Delete(type);
+        return await Delete(type);
     }
 
-    public async Task UpdateCatalogType(CatalogType type)
+    public async Task<int> UpdateCatalogType(CatalogType type)
     {
-        await Update(type);
+        return await Update(type);
     }
     public async Task<IEnumerable<CatalogType>> GetTypes()
     {

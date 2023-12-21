@@ -44,9 +44,9 @@ public class CatalogBffController : ControllerBase
     }
     
     [HttpGet("ByBrand")]
-    public async Task<ActionResult<CatalogItem>> GetItemByBrand(string catalogBrandName)
+    public async Task<ActionResult<CatalogItem>> GetItemByBrand(Guid id)
     {
-        var item =  await _catalogBffRepository.GetCatalogItemByCatalogBrand(catalogBrandName);
+        var item =  await _catalogBffRepository.GetCatalogItemByCatalogBrand(id);
         if (item == null)
         {
             return StatusCode(404);
@@ -66,9 +66,9 @@ public class CatalogBffController : ControllerBase
     }
     
     [HttpGet("ByType")]
-    public async Task<ActionResult<CatalogItem>> GetItemByType(string catalogTypeName)
+    public async Task<ActionResult<CatalogItem>> GetItemByType(Guid id)
     {
-        var item =  await _catalogBffRepository.GetCatalogTypeByCatalogType(catalogTypeName);
+        var item =  await _catalogBffRepository.GetCatalogTypeByCatalogType(id);
         if (item == null)
         {
             return StatusCode(404);

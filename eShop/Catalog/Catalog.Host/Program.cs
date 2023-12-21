@@ -1,5 +1,6 @@
 using Catalog.Host.Data;
 using Catalog.Host.Data.Entity;
+using Catalog.Host.Mapping;
 using Catalog.Host.Repositories;
 using Catalog.Host.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -14,9 +15,10 @@ builder.Services.AddScoped<ICatalogBrandRepository, CatalogBrandRepository>();
 builder.Services.AddScoped<ICatalogBffRepository, CatalogBffRepository>();
 builder.Services.AddScoped<ICatalogItemRepository, CatalogItemRepository>();
 builder.Services.AddScoped<ICatalogTypeRepository, CatalogTypeRepository>();
-builder.Services.AddDbContextFactory<AppDbContext>(opt => opt.UseNpgsql(configuration["ConnectionString"]));
+builder.Services.AddDbContext<AppDbContext>(opt => opt.UseNpgsql(configuration["ConnectionString"]));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 var app = builder.Build();
 

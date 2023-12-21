@@ -1,4 +1,6 @@
-﻿using Catalog.Host.Data.Entity;
+﻿using AutoMapper;
+using Catalog.Host.Data.Entity;
+using Catalog.Host.Models.DTOs;
 using Catalog.Host.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,10 +10,13 @@ namespace Catalog.Host.Controllers;
 [Route("[controller]")]
 public class CatalogTypeController : ControllerBase
 {
+    private readonly IMapper _mapper;
     private readonly ICatalogTypeRepository _catalogTypeRepository;
 
-    public CatalogTypeController(ICatalogTypeRepository catalogTypeRepository)
+    public CatalogTypeController(ICatalogTypeRepository catalogTypeRepository, IMapper mapper)
     {
+        
+        _mapper = mapper;
         _catalogTypeRepository = catalogTypeRepository;
 
     }
@@ -21,21 +26,25 @@ public class CatalogTypeController : ControllerBase
     {
         var guid = Guid.NewGuid();
         catalogType.Id = guid;
-        await _catalogTypeRepository.CreateCatalogType(catalogType); 
-        return Ok(catalogType);
+        var result = await _catalogTypeRepository.CreateCatalogType(catalogType); 
+        return Ok(result);
     }
     
-    [HttpPut]
-    public async Task<ActionResult<CatalogType>> PutType([FromBody] CatalogBrand catalogType)
+    [HttpPut("{id}")]
+    public async Task<ActionResult<CatalogType>> PutType([FromBody] CatalogTypeDto catalogTypeDto)
     {
-        var type = await _catalogTypeRepository.GetTypeById(catalogType.Id);
-        if (type == null)
-        {
-            return StatusCode(404);
-        }
+        var brand = await _catalogTypeRepository.GetTypeById(catalogTypeDto.Id);
 
-        await _catalogTypeRepository.UpdateCatalogType(type);
-        return type;
+        if (brand != null)
+        {
+            _mapper.Map(catalogTypeDto, brand); // Use mapping to update the existing object
+            var result = await _catalogTypeRepository.UpdateCatalogType(brand);
+            return Ok(result);
+        }
+        else
+        {
+            return NotFound(); // Return a 404 Not Found status code
+        }
     }
     
     [HttpDelete]
@@ -47,7 +56,7 @@ public class CatalogTypeController : ControllerBase
             return StatusCode(404);
         }
 
-        await _catalogTypeRepository.DeleteCatalogType(type);
-        return type;
+        var result = await _catalogTypeRepository.DeleteCatalogType(type);
+        return Ok(result);
     }
 }

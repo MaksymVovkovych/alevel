@@ -11,19 +11,19 @@ public class CatalogBrandRepository : BaseRepository<CatalogBrand>, ICatalogBran
     {
     }
 
-    public async Task CreateCatalogBrand(CatalogBrand brand)
+    public async Task<int> CreateCatalogBrand(CatalogBrand brand)
     {
-        await Create(brand);
+        return await Create(brand);
     }
 
-    public async Task DeleteCatalogBrand(CatalogBrand brand)
+    public async Task<int> DeleteCatalogBrand(CatalogBrand brand)
     {
-        await Delete(brand);
+        return await Delete(brand);
     }
 
-    public async Task UpdateCatalogBrand(CatalogBrand brand)
+    public async Task<int> UpdateCatalogBrand(CatalogBrand brand)
     {
-        await Update(brand);
+        return await Update(brand);
     }
     
     public async Task<IEnumerable<CatalogBrand>> GetBrands()

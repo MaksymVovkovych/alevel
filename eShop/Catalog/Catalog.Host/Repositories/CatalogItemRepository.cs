@@ -11,19 +11,19 @@ public class CatalogItemRepository : BaseRepository<CatalogItem>, ICatalogItemRe
     {
     }
 
-    public async Task CreateCatalogItem(CatalogItem item)
+    public async Task<int> CreateCatalogItem(CatalogItem item)
     {
-        await Create(item);
+        return await Create(item);
     }
 
-    public async Task DeleteCatalogItem(CatalogItem item)
+    public async Task<int> DeleteCatalogItem(CatalogItem item)
     {
-        await Delete(item);
+        return  await Delete(item);
     }
 
-    public async Task UpdateCatalogItem(CatalogItem item)
+    public async Task<int> UpdateCatalogItem(CatalogItem item)
     {
-        await Update(item);
+        return await Update(item);
     }
     public async Task<IEnumerable<CatalogItem>> GetItems()
     {

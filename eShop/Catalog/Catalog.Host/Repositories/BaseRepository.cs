@@ -1,4 +1,5 @@
 using System.Linq.Expressions;
+using AutoMapper;
 using Catalog.Host.Data;
 using Catalog.Host.Data.Entity;
 using Catalog.Host.Repositories.Interfaces;
@@ -15,22 +16,25 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class
         _appContext = appContext;
     }
     
-    public async Task Create(T item)
-    {
+    public async Task<int> Create(T item)
+     {
         await _appContext.Set<T>().AddAsync(item);
-        await _appContext.SaveChangesAsync();
+        return await _appContext.SaveChangesAsync();
     }
 
-    public async Task Update(T item)
+    public async Task<int> Update(T item)
     {
-        _appContext.Set<T>().Update(item);
-        await _appContext.SaveChangesAsync();
+
+        _appContext.Update(item);
+
+        return await _appContext.SaveChangesAsync();
+        
     }
 
-    public async Task Delete(T item)
+    public async Task<int> Delete(T item)
     {
         _appContext.Set<T>().Remove(item);
-        await _appContext.SaveChangesAsync();
+        return await _appContext.SaveChangesAsync();
     }
 
     public IQueryable<T> FindAll()

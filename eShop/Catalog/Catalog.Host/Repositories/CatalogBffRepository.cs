@@ -19,15 +19,15 @@ public class CatalogBffRepository : BaseRepository<CatalogItem> , ICatalogBffRep
             .FirstOrDefaultAsync();
     }
 
-    public async Task<CatalogItem?> GetCatalogItemByCatalogBrand(string catalogBrandName)
+    public async Task<CatalogItem?> GetCatalogItemByCatalogBrand(Guid id)
     {
-        return await FindByCondition(x => x.CatalogBrand.Brand == catalogBrandName)
+        return await FindByCondition(x => x.CatalogBrandId == id)
             .FirstOrDefaultAsync();
     }
 
-    public async Task<CatalogItem?> GetCatalogTypeByCatalogType(string catalogTypeName)
+    public async Task<CatalogItem?> GetCatalogTypeByCatalogType(Guid id)
     {
-        return await FindByCondition(x => x.CatalogType.Type == catalogTypeName)
+        return await FindByCondition(x => x.CatalogTypeId == id)
             .FirstOrDefaultAsync();
     }
 

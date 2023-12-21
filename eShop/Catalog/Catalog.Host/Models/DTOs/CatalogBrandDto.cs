@@ -1,6 +1,6 @@
-﻿namespace Catalog.Host.Data.Entity;
+namespace Catalog.Host.Models.DTOs;
 
-public class CatalogBrand
+public class CatalogBrandDto
 {
     public Guid Id { get; set; }
 
