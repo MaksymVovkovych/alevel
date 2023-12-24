@@ -37,13 +37,13 @@ public class CatalogItemController : ControllerBase
 
         if (brand != null)
         {
-            _mapper.Map(catalogItemDto, brand); // Use mapping to update the existing object
-            var result = await _catalogItemRepository.UpdateCatalogItem(brand);
+            var brandMapped = _mapper.Map(catalogItemDto, brand);
+            var result = await _catalogItemRepository.UpdateCatalogItem(brandMapped);
             return Ok(result);
         }
         else
         {
-            return NotFound(); // Return a 404 Not Found status code
+            return NotFound(); 
         }
     }
     
@@ -53,7 +53,7 @@ public class CatalogItemController : ControllerBase
         var item = await _catalogItemRepository.GetItemById(id);
         if (item == null)
         {
-            return StatusCode(404);
+            return NotFound();
         }
 
         var result = await _catalogItemRepository.DeleteCatalogItem(item);

@@ -6,7 +6,7 @@ public static class IBaseRepositoryMock
 {
     public static IBaseRepository<CatalogItem> GetMock()
     {
-        var items = IBaseRepositoryMock.GetCatalogItems();
+        var items = GetCatalogItems();
         var dbContextMock = AppDbContextMock.GetMock<CatalogItem, AppDbContext>(items, x => x.CatalogItems);
         return new BaseRepository<CatalogItem>(dbContextMock);
     }

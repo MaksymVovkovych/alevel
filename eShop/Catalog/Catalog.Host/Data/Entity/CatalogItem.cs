@@ -14,11 +14,11 @@ public class CatalogItem
 
     public Guid? CatalogTypeId { get; set; }
 
-    public CatalogType CatalogType { get; set; } = null!;
+    public CatalogType CatalogType { get; set; }
 
     public Guid? CatalogBrandId { get; set; }
 
-    public CatalogBrand CatalogBrand { get; set; } = null!;
+    public CatalogBrand CatalogBrand { get; set; } 
 
     public int AvailableStock { get; set; }
 }

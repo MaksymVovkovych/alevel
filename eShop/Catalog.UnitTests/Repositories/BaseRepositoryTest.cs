@@ -5,13 +5,16 @@ namespace Catalog.UnitTests;
 
 public class BaseRepositoryTest
 {
+    private IBaseRepository<CatalogItem> _baseRepository;
+    
+    
     public BaseRepositoryTest()
     {
-        
+        _baseRepository = IBaseRepositoryMock.GetMock();
     }
 
     [Fact]
-    public void Test()
+    public async Task Test()
     {
         
     }

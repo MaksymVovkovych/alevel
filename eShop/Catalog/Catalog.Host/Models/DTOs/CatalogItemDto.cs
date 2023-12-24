@@ -10,11 +10,11 @@ public class CatalogItemDto
 
     public decimal Price { get; set; }
 
-    public string PictureUrl { get; set; } = null!;
+    public string PictureFileName { get; set; } = null!;
 
-    public CatalogTypeDto CatalogType { get; set; } = null!;
+    public CatalogTypeDto? CatalogType { get; set; }
 
-    public CatalogBrandDto CatalogBrand { get; set; } = null!;
+    public CatalogBrandDto? CatalogBrand { get; set; }
 
     public int AvailableStock { get; set; }
 }
