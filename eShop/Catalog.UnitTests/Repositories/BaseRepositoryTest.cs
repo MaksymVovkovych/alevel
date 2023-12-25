@@ -16,6 +16,7 @@ public class BaseRepositoryTest
     [Fact]
     public async Task Test()
     {
-        
+        var x = _baseRepository.FindByCondition(c => c.Price > 15).ToList();
+
     }
 }

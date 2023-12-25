@@ -21,6 +21,8 @@ public class AppDbContextMock
         {
             foreach (var t in ts) { lstData.Remove(t); }
         });
+
+        dbContext.Setup(x => x.Set<TData>()).Returns(dbSetMock.Object);
         dbContext.Setup(dbSetSelectionExpression).Returns(dbSetMock.Object);
 
         return dbContext.Object;
