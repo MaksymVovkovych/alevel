@@ -12,12 +12,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28184a92-e4c4-4ccd-a5a7-4d2f257528dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.eShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.eShop/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="28184a92-e4c4-4ccd-a5a7-4d2f257528dd" name="Changes" comment="--created UnitTests for Repository">
       <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/AppDbContextMock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog.UnitTests/AppDbContextMock.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/Controllers/CatalogItemControllerTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog.UnitTests/Controllers/CatalogItemControllerTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/GlobalUsings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog.UnitTests/GlobalUsings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/IBaseRepositoryMock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog.UnitTests/IBaseRepositoryMock.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/Repositories/BaseRepositoryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog.UnitTests/Repositories/BaseRepositoryTest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +43,12 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a54edce4e91cb965fe389033e2b24044e512ee99e302e41c8c2909733443b14/CastleProxyFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a81ee8c4b239a5f464b996b6cb5ab701e2bca7511eb164cb746c7590c3b6b1/Mock`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b187261058fa986938df785f054eb6195e6a67e694894827255e0b7d7cf3/Mock.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/dev/A_LEVEL/eShop/Catalog.UnitTests/AppDbContextMock.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/dev/A_LEVEL/eShop/Catalog.UnitTests/AppDbContextMock.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/dev/A_LEVEL/eShop/Catalog.UnitTests/AppDbContextMock.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/dev/A_LEVEL/eShop/Catalog.UnitTests/AppDbContextMock.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/dev/A_LEVEL/eShop/Catalog.UnitTests/AppDbContextMock.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/dev/A_LEVEL/eShop/Catalog.UnitTests/AppDbContextMock.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -70,7 +72,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "XThreadsFramesViewSplitterKey": "0.51510334",
-    "git-widget-placeholder": "MSS#1",
+    "git-widget-placeholder": "Merging MSS#1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -181,7 +183,7 @@
       <workItem from="1703166655353" duration="8152000" />
       <workItem from="1703413745870" duration="10299000" />
       <workItem from="1703503089828" duration="8108000" />
-      <workItem from="1703580025127" duration="2150000" />
+      <workItem from="1703580025127" duration="2475000" />
     </task>
     <task id="LOCAL-00001" summary="-add domain models&#10;-add configurations for domain model&#10;-add DbContext">
       <option name="closed" value="true" />
@@ -231,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703424545077</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="--created UnitTests for Repository">
+      <option name="closed" value="true" />
+      <created>1703582314435</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1703582314435</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,33 +267,34 @@
     <MESSAGE value="." />
     <MESSAGE value="--added Mapping&#10;--fixed Update" />
     <MESSAGE value="--create UnitTests for CatatlogItemController" />
-    <option name="LAST_COMMIT_MESSAGE" value="--create UnitTests for CatatlogItemController" />
+    <MESSAGE value="--created UnitTests for Repository" />
+    <option name="LAST_COMMIT_MESSAGE" value="--created UnitTests for Repository" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Catalog.UnitTests/Repositories/BaseRepositoryTest.cs</url>
-          <line>44</line>
+          <line>49</line>
           <properties documentPath="D:\dev\A_LEVEL\eShop\Catalog.UnitTests\Repositories\BaseRepositoryTest.cs" initialLine="43" containingFunctionPresentation="Method 'Create_RerurnSuccess'">
             <startOffsets>
-              <option value="979" />
+              <option value="1060" />
             </startOffsets>
             <endOffsets>
-              <option value="1035" />
+              <option value="1116" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Catalog.UnitTests/Repositories/BaseRepositoryTest.cs</url>
-          <line>69</line>
+          <line>74</line>
           <properties documentPath="D:\dev\A_LEVEL\eShop\Catalog.UnitTests\Repositories\BaseRepositoryTest.cs" initialLine="83" containingFunctionPresentation="Method 'Delete_ReturnsIntSuccess'">
             <startOffsets>
-              <option value="1661" />
+              <option value="1742" />
             </startOffsets>
             <endOffsets>
-              <option value="1662" />
+              <option value="1743" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="3" />
