@@ -14,12 +14,11 @@
   <component name="ChangeListManager">
     <list default="true" id="28184a92-e4c4-4ccd-a5a7-4d2f257528dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.eShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.eShop/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/AppDbContextMock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog.UnitTests/AppDbContextMock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/Controllers/CatalogItemControllerTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog.UnitTests/Controllers/CatalogItemControllerTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/GlobalUsings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog.UnitTests/GlobalUsings.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/IBaseRepositoryMock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog.UnitTests/IBaseRepositoryMock.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/Repositories/BaseRepositoryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog.UnitTests/Repositories/BaseRepositoryTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogItemController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogItemController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Data/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Data/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Data/Entity/CatalogItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Data/Entity/CatalogItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Models/DTOs/CatalogItemDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Models/DTOs/CatalogItemDto.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +38,7 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Linq.Expressions/src/System/Linq/Expressions/ParameterExpression.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Guid.Windows.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Task.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/ValueTask.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/34e54cf52b4a4c2b82645ccc3a46837e5e000/10/6fd16ccf/ProxyGenerator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/34e54cf52b4a4c2b82645ccc3a46837e5e000/57/9c681939/AbstractInvocation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/109fd7428848d7e3885e256f1afd90efb43c3483fd4c136f1a2f1389cca69e/TypePair.cs" root0="SKIP_HIGHLIGHTING" />
@@ -61,30 +61,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.Catalog.Host: IIS Express.executor&quot;: &quot;Debug&quot;,
-    &quot;.NET Launch Settings Profile.Catalog.Host: https.executor&quot;: &quot;Debug&quot;,
-    &quot;9f5201c4-1c75-4e5c-a5d9-0e19d86b2ee7.executor&quot;: &quot;Debug&quot;,
-    &quot;Docker.Catalog.Host/Dockerfile.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;MSS#1&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.Catalog.Host: IIS Express.executor": "Debug",
+    ".NET Launch Settings Profile.Catalog.Host: https.executor": "Debug",
+    "9f5201c4-1c75-4e5c-a5d9-0e19d86b2ee7.executor": "Debug",
+    "Docker.Catalog.Host/Dockerfile.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "XThreadsFramesViewSplitterKey": "0.51510334",
+    "git-widget-placeholder": "MSS#1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\vovko\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\vovko\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\vovko\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\vovko\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\vovko\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\vovko\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Catalog.Host: https">
     <configuration name="Catalog.Host: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Catalog/Catalog.Host/Catalog.Host.csproj" />
@@ -178,7 +179,9 @@
       <workItem from="1703103142590" duration="8023000" />
       <workItem from="1703150458908" duration="7270000" />
       <workItem from="1703166655353" duration="8152000" />
-      <workItem from="1703413745870" duration="10000000" />
+      <workItem from="1703413745870" duration="10299000" />
+      <workItem from="1703503089828" duration="8108000" />
+      <workItem from="1703580025127" duration="2150000" />
     </task>
     <task id="LOCAL-00001" summary="-add domain models&#10;-add configurations for domain model&#10;-add DbContext">
       <option name="closed" value="true" />
@@ -220,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703171886040</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="--create UnitTests for CatatlogItemController">
+      <option name="closed" value="true" />
+      <created>1703424545077</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703424545077</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,29 +256,44 @@
     <MESSAGE value="/" />
     <MESSAGE value="." />
     <MESSAGE value="--added Mapping&#10;--fixed Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="--added Mapping&#10;--fixed Update" />
+    <MESSAGE value="--create UnitTests for CatatlogItemController" />
+    <option name="LAST_COMMIT_MESSAGE" value="--create UnitTests for CatatlogItemController" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Catalog.UnitTests/Repositories/BaseRepositoryTest.cs</url>
-          <line>17</line>
-          <properties documentPath="D:\dev\A_LEVEL\eShop\Catalog.UnitTests\Repositories\BaseRepositoryTest.cs" initialLine="16" containingFunctionPresentation="Method 'Test'">
+          <line>44</line>
+          <properties documentPath="D:\dev\A_LEVEL\eShop\Catalog.UnitTests\Repositories\BaseRepositoryTest.cs" initialLine="43" containingFunctionPresentation="Method 'Create_RerurnSuccess'">
             <startOffsets>
-              <option value="324" />
+              <option value="979" />
             </startOffsets>
             <endOffsets>
-              <option value="325" />
+              <option value="1035" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Catalog.UnitTests/Repositories/BaseRepositoryTest.cs</url>
+          <line>69</line>
+          <properties documentPath="D:\dev\A_LEVEL\eShop\Catalog.UnitTests\Repositories\BaseRepositoryTest.cs" initialLine="83" containingFunctionPresentation="Method 'Delete_ReturnsIntSuccess'">
+            <startOffsets>
+              <option value="1661" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1662" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#Microsoft.EntityFrameworkCore.DbContext" memberName="_serviceScope" />
+        <PinnedItemInfo parentTag="Frame#Catalog.Host.Repositories.BaseRepository`1.FindAll" memberName="this" />
       </pinned-members>
     </pin-to-top-manager>
   </component>

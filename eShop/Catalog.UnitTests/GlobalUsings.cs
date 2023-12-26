@@ -5,3 +5,8 @@ global using Catalog.Host.Data.Entity;
 global using Catalog.Host.Repositories;
 global using Microsoft.EntityFrameworkCore;
 global using Moq;
+global using AutoMapper;
+global using Catalog.Host.Controllers;
+global using Catalog.Host.Models.DTOs;
+global using Catalog.Host.Repositories.Interfaces;
+global using Microsoft.AspNetCore.Mvc;

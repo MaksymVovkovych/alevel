@@ -1,8 +1,3 @@
-using AutoMapper;
-using Catalog.Host.Controllers;
-using Catalog.Host.Models.DTOs;
-using Catalog.Host.Repositories.Interfaces;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Catalog.UnitTests.Controllers;
 
@@ -41,6 +36,7 @@ public class CatalogItemControllerTests
         var okResult = Assert.IsType<OkObjectResult>(result.Result);
         Assert.Equal(expected, okResult.Value);
     }
+    
     [Fact]
     public async Task PutItem_ExistingItem_ReturnsOkResult()
     {

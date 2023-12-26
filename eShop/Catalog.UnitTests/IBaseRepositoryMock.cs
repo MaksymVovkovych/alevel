@@ -18,7 +18,7 @@ public static class IBaseRepositoryMock
             new CatalogItem
             {
                 Id = Guid.NewGuid(), AvailableStock = 100, Description = ".NET Bot Black Hoodie",
-                Name = ".NET Bot Black Hoodie", Price = 19.5M, PictureFileName = "1.png"
+                Name = ".NET Bot Black Hoodie", Price = 1, PictureFileName = "1.png"
             },
             new CatalogItem
             {
