@@ -22,12 +22,12 @@ builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 var app = builder.Build();
 
-
+app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 app.MapControllers();
 app.UseSwagger();
 app.UseSwaggerUI();
 app.UseRouting();
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 
 CreateDbIfNotExist(app);
 app.Run();

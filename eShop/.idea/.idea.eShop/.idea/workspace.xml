@@ -7,14 +7,22 @@
     <projectFile profileName="IIS Express">Catalog/Catalog.csproj</projectFile>
     <projectFile profileName="http">Catalog/Catalog.csproj</projectFile>
     <projectFile profileName="https">Catalog/Catalog.csproj</projectFile>
+    <projectFile profileName="IIS Express">MVC/MVC.csproj</projectFile>
+    <projectFile profileName="http">MVC/MVC.csproj</projectFile>
+    <projectFile profileName="https">MVC/MVC.csproj</projectFile>
+    <projectFile profileName="Proxy">Proxy/Proxy.csproj</projectFile>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28184a92-e4c4-4ccd-a5a7-4d2f257528dd" name="Changes" comment="--created UnitTests for Repository">
-      <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/AppDbContextMock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog.UnitTests/AppDbContextMock.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/Repositories/BaseRepositoryTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog.UnitTests/Repositories/BaseRepositoryTest.cs" afterDir="false" />
+    <list default="true" id="28184a92-e4c4-4ccd-a5a7-4d2f257528dd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.eShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.eShop/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/config/applicationhost.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eShop.sln" beforeDir="false" afterPath="$PROJECT_DIR$/eShop.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +39,7 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/efcore/e017dc125bef2f604f85befd8ff27544a5a67c38/src/EFCore/Internal/InternalDbSet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/coreclr/System.Private.CoreLib/src/System/Runtime/CompilerServices/RuntimeHelpers.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/coreclr/System.Private.CoreLib/src/System/Type.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/Microsoft.Extensions.Options/src/UnnamedOptionsManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Linq.Expressions/src/System/Linq/Expressions/ParameterExpression.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Guid.Windows.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Task.cs" root0="SKIP_HIGHLIGHTING" />
@@ -43,14 +52,11 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a54edce4e91cb965fe389033e2b24044e512ee99e302e41c8c2909733443b14/CastleProxyFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a81ee8c4b239a5f464b996b6cb5ab701e2bca7511eb164cb746c7590c3b6b1/Mock`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b187261058fa986938df785f054eb6195e6a67e694894827255e0b7d7cf3/Mock.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/dev/A_LEVEL/eShop/Catalog.UnitTests/AppDbContextMock.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/dev/A_LEVEL/eShop/Catalog.UnitTests/AppDbContextMock.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/dev/A_LEVEL/eShop/Catalog.UnitTests/AppDbContextMock.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/dev/A_LEVEL/eShop/Catalog.UnitTests/AppDbContextMock.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/dev/A_LEVEL/eShop/Catalog.UnitTests/AppDbContextMock.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/dev/A_LEVEL/eShop/Catalog.UnitTests/AppDbContextMock.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 1
@@ -67,12 +73,13 @@
   "keyToString": {
     ".NET Launch Settings Profile.Catalog.Host: IIS Express.executor": "Debug",
     ".NET Launch Settings Profile.Catalog.Host: https.executor": "Debug",
+    ".NET Launch Settings Profile.MVC: IIS Express.executor": "Debug",
+    ".NET Launch Settings Profile.MVC: https.executor": "Debug",
     "9f5201c4-1c75-4e5c-a5d9-0e19d86b2ee7.executor": "Debug",
     "Docker.Catalog.Host/Dockerfile.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "XThreadsFramesViewSplitterKey": "0.51510334",
-    "git-widget-placeholder": "Merging MSS#1",
+    "git-widget-placeholder": "MSS#1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -81,6 +88,10 @@
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "yaml",
+      "Nginx Configuration"
+    ],
     "rider.external.source.directories": [
       "C:\\Users\\vovko\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
       "C:\\Users\\vovko\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
@@ -88,7 +99,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Catalog.Host: https">
+  <component name="RunManager" selected="Multi-Launch.Multi-Launch: eShop">
     <configuration name="Catalog.Host: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Catalog/Catalog.Host/Catalog.Host.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -134,6 +145,95 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="MVC: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/MVC/MVC.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="MVC: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/MVC/MVC.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="http" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="MVC: https" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/MVC/MVC.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="https" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="Proxy" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Proxy/Proxy.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="Proxy" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="Multi-Launch: eShop" type="com.intellij.execution.configurations.multilaunch" factoryName="MultiLaunchConfiguration">
+      <rows>
+        <ExecutableRowSnapshot>
+          <option name="condition">
+            <ConditionSnapshot>
+              <option name="type" value="immediately" />
+            </ConditionSnapshot>
+          </option>
+          <option name="executable">
+            <ExecutableSnapshot>
+              <option name="id" value="runConfig:.NET Launch Settings Profile.Catalog.Host: https" />
+            </ExecutableSnapshot>
+          </option>
+        </ExecutableRowSnapshot>
+        <ExecutableRowSnapshot>
+          <option name="condition">
+            <ConditionSnapshot>
+              <option name="type" value="immediately" />
+            </ConditionSnapshot>
+          </option>
+          <option name="executable">
+            <ExecutableSnapshot>
+              <option name="id" value="runConfig:.NET Launch Settings Profile.MVC: https" />
+            </ExecutableSnapshot>
+          </option>
+        </ExecutableRowSnapshot>
+      </rows>
+      <method v="2" />
+    </configuration>
     <configuration name="Catalog.Host/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
       <deployment type="dockerfile">
         <settings>
@@ -155,6 +255,39 @@
       <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
+    <configuration name="MVC/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="mvc" />
+          <option name="containerName" value="mvc" />
+          <option name="contextFolderPath" value="D:\dev\A_LEVEL\eShop" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="8080" />
+                <option name="hostIp" value="127.0.0.1" />
+                <option name="hostPort" value="8080" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="sourceFilePath" value="MVC/Dockerfile" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Proxy/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="proxy" />
+          <option name="containerName" value="proxy" />
+          <option name="contextFolderPath" value="D:\dev\A_LEVEL\eShop" />
+          <option name="sourceFilePath" value="Proxy/Dockerfile" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
       <deployment type="dockerfile">
         <settings />
@@ -162,6 +295,19 @@
       <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue=".NET Launch Settings Profile.Catalog.Host: http" />
+      <item itemvalue=".NET Launch Settings Profile.Catalog.Host: https" />
+      <item itemvalue=".NET Launch Settings Profile.Catalog.Host: IIS Express" />
+      <item itemvalue=".NET Launch Settings Profile.MVC: http" />
+      <item itemvalue=".NET Launch Settings Profile.MVC: https" />
+      <item itemvalue=".NET Launch Settings Profile.MVC: IIS Express" />
+      <item itemvalue=".NET Launch Settings Profile.Proxy" />
+      <item itemvalue="Docker.Catalog.Host/Dockerfile" />
+      <item itemvalue="Docker.MVC/Dockerfile" />
+      <item itemvalue="Docker.Proxy/Dockerfile" />
+      <item itemvalue="Multi-Launch.Multi-Launch: eShop" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -183,7 +329,13 @@
       <workItem from="1703166655353" duration="8152000" />
       <workItem from="1703413745870" duration="10299000" />
       <workItem from="1703503089828" duration="8108000" />
-      <workItem from="1703580025127" duration="2475000" />
+      <workItem from="1703580025127" duration="3513000" />
+      <workItem from="1703669357968" duration="7394000" />
+      <workItem from="1703755470438" duration="21000" />
+      <workItem from="1704193627021" duration="4117000" />
+      <workItem from="1704280440281" duration="82000" />
+      <workItem from="1704280547670" duration="12767000" />
+      <workItem from="1704395602609" duration="2190000" />
     </task>
     <task id="LOCAL-00001" summary="-add domain models&#10;-add configurations for domain model&#10;-add DbContext">
       <option name="closed" value="true" />
@@ -241,7 +393,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703582314435</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary=".">
+      <option name="closed" value="true" />
+      <created>1703582654075</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1703582654075</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,37 +424,37 @@
     <MESSAGE value="-add domain models&#10;-add configurations for domain model&#10;-add DbContext" />
     <MESSAGE value="--add repositories&#10;--add controllers" />
     <MESSAGE value="/" />
-    <MESSAGE value="." />
     <MESSAGE value="--added Mapping&#10;--fixed Update" />
     <MESSAGE value="--create UnitTests for CatatlogItemController" />
     <MESSAGE value="--created UnitTests for Repository" />
-    <option name="LAST_COMMIT_MESSAGE" value="--created UnitTests for Repository" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Catalog.UnitTests/Repositories/BaseRepositoryTest.cs</url>
-          <line>49</line>
+          <line>44</line>
           <properties documentPath="D:\dev\A_LEVEL\eShop\Catalog.UnitTests\Repositories\BaseRepositoryTest.cs" initialLine="43" containingFunctionPresentation="Method 'Create_RerurnSuccess'">
             <startOffsets>
-              <option value="1060" />
+              <option value="979" />
             </startOffsets>
             <endOffsets>
-              <option value="1116" />
+              <option value="1035" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Catalog.UnitTests/Repositories/BaseRepositoryTest.cs</url>
-          <line>74</line>
+          <line>69</line>
           <properties documentPath="D:\dev\A_LEVEL\eShop\Catalog.UnitTests\Repositories\BaseRepositoryTest.cs" initialLine="83" containingFunctionPresentation="Method 'Delete_ReturnsIntSuccess'">
             <startOffsets>
-              <option value="1742" />
+              <option value="1661" />
             </startOffsets>
             <endOffsets>
-              <option value="1743" />
+              <option value="1662" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="3" />
