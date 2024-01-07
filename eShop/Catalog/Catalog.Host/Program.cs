@@ -1,35 +1,64 @@
+using Catalog.Host.Configurations;
 using Catalog.Host.Data;
 using Catalog.Host.Data.Entity;
 using Catalog.Host.Mapping;
 using Catalog.Host.Repositories;
 using Catalog.Host.Repositories.Interfaces;
+using Catalog.Host.Services;
+using Catalog.Host.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var configuration = GetConfiguration();
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 builder.Services.AddControllers();
-builder.Services.AddScoped<ICatalogBrandRepository, CatalogBrandRepository>();
-builder.Services.AddScoped<ICatalogBffRepository, CatalogBffRepository>();
-builder.Services.AddScoped<ICatalogItemRepository, CatalogItemRepository>();
-builder.Services.AddScoped<ICatalogTypeRepository, CatalogTypeRepository>();
-builder.Services.AddDbContext<AppDbContext>(opt => opt.UseNpgsql(configuration["ConnectionString"]));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.AddAutoMapper(typeof(Program));
+
+builder.Services.AddTransient<ICatalogItemRepository, CatalogItemRepository>();
+builder.Services.AddTransient<ICatalogBrandRepository, CatalogBrandRepository>();
+builder.Services.AddTransient<ICatalogTypeRepository, CatalogTypeRepository>();
+
+builder.Services.AddTransient<ICatalogBffService, CatalogBffService>();
+builder.Services.AddTransient<ICatalogItemService, CatalogItemService>();
+builder.Services.AddTransient<ICatalogBrandService, CatalogBrandService>();
+builder.Services.AddTransient<ICatalogTypeService, CatalogTypeService>();
+
+builder.Services.Configure<CatalogConfig>(configuration);
+
+builder.Services.AddDbContextFactory<AppDbContext>(options => options.UseNpgsql(configuration["ConnectionString"]));
+builder.Services.AddScoped<IDbContextWrapper<AppDbContext>, DbContextWrapper<AppDbContext>>();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(
+        "CorsPolicy",
+        builder => builder
+            .SetIsOriginAllowed((host) => true)
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials());
+});
 
 var app = builder.Build();
 
-app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+    app.UseCors("CorsPolicy");
+}
+
+app.UseHttpsRedirection();
 app.MapControllers();
-app.UseSwagger();
-app.UseSwaggerUI();
-app.UseRouting();
-// app.UseHttpsRedirection();
+
 
 CreateDbIfNotExist(app);
+
+
 app.Run();
 
 

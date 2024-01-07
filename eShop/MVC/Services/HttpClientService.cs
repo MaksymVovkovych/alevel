@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using MVC.Models.Enums;
 using MVC.Models.Requests;
 using MVC.Services.Interfaces;
+using MVC.ViewModels;
 using Newtonsoft.Json;
 
 namespace MVC.Services
@@ -21,16 +22,14 @@ namespace MVC.Services
         {
             var client = _clientFactory.CreateClient();
 
-            var httpMessage = new HttpRequestMessage
-            {
-                RequestUri = new Uri(url),
-                Method = method
-            };
+            var httpMessage = new HttpRequestMessage();
+            httpMessage.RequestUri = new Uri(url);
+            httpMessage.Method = method;
 
             if (content != null)
             {
-                var jsonContent = JsonConvert.SerializeObject(content);
-                httpMessage.Content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+                httpMessage.Content =
+                    new StringContent(JsonConvert.SerializeObject(content), Encoding.UTF8, "application/json");
             }
 
             var result = await client.SendAsync(httpMessage);
@@ -38,11 +37,17 @@ namespace MVC.Services
             if (result.IsSuccessStatusCode)
             {
                 var resultContent = await result.Content.ReadAsStringAsync();
-                var response = JsonConvert.DeserializeObject<TResponse>(resultContent);
+
+                if (string.IsNullOrEmpty(resultContent))
+                {
+                    return default(TResponse)!;
+                }
+
+                var response = JsonConvert.DeserializeObject<TResponse>(resultContent) !;
                 return response;
             }
 
-            return default!;
+            return default(TResponse)!;
         }
     }
 }

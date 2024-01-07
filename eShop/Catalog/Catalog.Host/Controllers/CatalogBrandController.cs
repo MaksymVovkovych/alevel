@@ -1,8 +1,14 @@
-﻿using AutoMapper;
+﻿using System.Net;
+using AutoMapper;
 using Catalog.Host.Data;
 using Catalog.Host.Data.Entity;
 using Catalog.Host.Models.DTOs;
 using Catalog.Host.Repositories.Interfaces;
+using Catalog.Host.Services.Interfaces;
+using Catalog.Host.Services.Interfaces.AddResponses;
+using Catalog.Host.Services.Interfaces.DeleteRequests;
+using Catalog.Host.Services.Interfaces.UpdateRequests;
+using Catalog.Host.Services.Interfaces.UpdateResponses;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Catalog.Host.Controllers;
@@ -13,53 +19,52 @@ namespace Catalog.Host.Controllers;
 
 public class CatalogBrandController : ControllerBase
 {
-    private readonly IMapper _mapper;
-    private readonly ICatalogBrandRepository _catalogBrandRepository;
+    private readonly ILogger<CatalogBrandController> _logger;
+    private readonly ICatalogBrandService _catalogBrandService;
 
-    public CatalogBrandController(ICatalogBrandRepository catalogBrandRepository, IMapper mapper)
+    public CatalogBrandController(
+        ILogger<CatalogBrandController> logger,
+        ICatalogBrandService catalogBrandService)
     {
-        _mapper = mapper;
-        _catalogBrandRepository = catalogBrandRepository;
-
+        _logger = logger;
+        _catalogBrandService = catalogBrandService;
     }
 
-    [HttpPost]
-    public async Task<ActionResult<CatalogBrand>> PostBrand([FromBody] CatalogBrand catalogBrand)
+    [HttpGet("brands")]
+    public async Task<IActionResult> GetBrandsByPage(int pageIndex = 1, int pageSize = 10)
     {
-        var guid = Guid.NewGuid();
-        catalogBrand.Id = guid;
-        var result = await _catalogBrandRepository.CreateCatalogBrand(catalogBrand); 
+        var result = await _catalogBrandService.GetByPageAsyncHttpGet(pageIndex, pageSize);
         return Ok(result);
     }
-    
-    [HttpPut("{id}")]
-    public async Task<ActionResult<CatalogBrand>> PutBrand([FromBody]CatalogBrandDto catalogBrandDto)
-    {
-        var brand = await _catalogBrandRepository.GetBrandById(catalogBrandDto.Id);
 
-        if (brand != null)
-        {
-            _mapper.Map(catalogBrandDto, brand); // Use mapping to update the existing object
-            var result = await _catalogBrandRepository.UpdateCatalogBrand(brand);
-            return Ok(result);
-        }
-        else
-        {
-            return NotFound(); // Return a 404 Not Found status code
-        }
+    [HttpPost("brands")]
+    [ProducesResponseType(typeof(AddCatalogBrandResponse<int?>), (int)HttpStatusCode.OK)]
+    public async Task<IActionResult> AddBrand(AddCatalogBrandRequest request)
+    {
+        var result = await _catalogBrandService.AddAsync(request);
+        return Ok(new AddCatalogBrandResponse<Guid?>() { Id = result });
     }
-    
-    [HttpDelete]
-    public async Task<ActionResult<CatalogBrand>> DeleteBrand(Guid id)
-    {
-        var brand = await _catalogBrandRepository.GetBrandById(id);
-        if (brand == null)
-        {
-            return StatusCode(404);
-        }
 
-        var result = await _catalogBrandRepository.DeleteCatalogBrand(brand);
+    [HttpPut("brands/{id}")]
+    [ProducesResponseType(typeof(UpdateCatalogBrandResponse<int>), (int)HttpStatusCode.OK)]
+    public async Task<IActionResult> UpdateBrand(Guid id, UpdateCatalogBrandRequest request)
+    {
+        var result = await _catalogBrandService.UpdateAsync(request);
         return Ok(result);
     }
-    
+
+    [HttpDelete("brands/{id}")]
+    [ProducesResponseType((int)HttpStatusCode.OK)]
+    public async Task<IActionResult> DeleteBrand(Guid id)
+    {
+        try
+        {
+            await _catalogBrandService.DeleteAsync(new DeleteCatalogBrandRequest { Id = id });
+            return Ok("Brand successfully deleted");
+        }
+        catch (KeyNotFoundException)
+        {
+            return NotFound("Brand not found");
+        }
+    }
 }

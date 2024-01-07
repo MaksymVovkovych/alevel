@@ -1,7 +1,9 @@
-﻿using AutoMapper;
-using Catalog.Host.Data.Entity;
-using Catalog.Host.Models.DTOs;
-using Catalog.Host.Repositories.Interfaces;
+﻿using System.Net;
+using Catalog.Host.Services.Interfaces;
+using Catalog.Host.Services.Interfaces.AddResponses;
+using Catalog.Host.Services.Interfaces.DeleteRequests;
+using Catalog.Host.Services.Interfaces.UpdateRequests;
+using Catalog.Host.Services.Interfaces.UpdateResponses;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Catalog.Host.Controllers;
@@ -10,53 +12,52 @@ namespace Catalog.Host.Controllers;
 [Route("[controller]")]
 public class CatalogTypeController : ControllerBase
 {
-    private readonly IMapper _mapper;
-    private readonly ICatalogTypeRepository _catalogTypeRepository;
+    private readonly ILogger<CatalogTypeController> _logger;
+    private readonly ICatalogTypeService _catalogTypeService;
 
-    public CatalogTypeController(ICatalogTypeRepository catalogTypeRepository, IMapper mapper)
+    public CatalogTypeController(
+        ILogger<CatalogTypeController> logger,
+        ICatalogTypeService catalogTypeService)
     {
-        
-        _mapper = mapper;
-        _catalogTypeRepository = catalogTypeRepository;
-
+        _logger = logger;
+        _catalogTypeService = catalogTypeService;
     }
 
-    [HttpPost]
-    public async Task<ActionResult<CatalogType>> PostType([FromBody] CatalogType catalogType)
+    [HttpGet("types")]
+    public async Task<IActionResult> GetTypesByPage(int pageIndex = 1, int pageSize = 10)
     {
-        var guid = Guid.NewGuid();
-        catalogType.Id = guid;
-        var result = await _catalogTypeRepository.CreateCatalogType(catalogType); 
+        var result = await _catalogTypeService.GetByPageAsyncHttpGet(pageIndex, pageSize);
         return Ok(result);
     }
-    
-    [HttpPut("{id}")]
-    public async Task<ActionResult<CatalogType>> PutType([FromBody] CatalogTypeDto catalogTypeDto)
-    {
-        var brand = await _catalogTypeRepository.GetTypeById(catalogTypeDto.Id);
 
-        if (brand != null)
-        {
-            _mapper.Map(catalogTypeDto, brand); // Use mapping to update the existing object
-            var result = await _catalogTypeRepository.UpdateCatalogType(brand);
-            return Ok(result);
-        }
-        else
-        {
-            return NotFound(); // Return a 404 Not Found status code
-        }
+    [HttpPost("types")]
+    [ProducesResponseType(typeof(AddCatalogTypeResponse<int?>), (int)HttpStatusCode.OK)]
+    public async Task<IActionResult> AddType(AddCatalogTypeRequest request)
+    {
+        var result = await _catalogTypeService.AddAsync(request);
+        return Ok(new AddCatalogTypeResponse<Guid?>() { Id = result });
     }
-    
-    [HttpDelete]
-    public async Task<ActionResult<CatalogType>> DeleteType(Guid id)
-    {
-        var type = await _catalogTypeRepository.GetTypeById(id);
-        if (type == null)
-        {
-            return StatusCode(404);
-        }
 
-        var result = await _catalogTypeRepository.DeleteCatalogType(type);
+    [HttpPut("types/{id}")]
+    [ProducesResponseType(typeof(UpdateCatalogTypeResponse<int>), (int)HttpStatusCode.OK)]
+    public async Task<IActionResult> UpdateType(Guid id, UpdateCatalogTypeRequest request)
+    {
+        var result = await _catalogTypeService.UpdateAsync(request);
         return Ok(result);
+    }
+
+    [HttpDelete("types/{id}")]
+    [ProducesResponseType((int)HttpStatusCode.OK)]
+    public async Task<IActionResult> DeleteType(Guid id)
+    {
+        try
+        {
+            await _catalogTypeService.DeleteAsync(new DeleteCatalogTypeRequest() { Id = id });
+            return Ok("Type successfully deleted");
+        }
+        catch (KeyNotFoundException)
+        {
+            return NotFound("Type not found");
+        }
     }
 }

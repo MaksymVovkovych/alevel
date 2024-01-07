@@ -1,6 +1,7 @@
-﻿using Catalog.Host.Data.Entity;
-using Catalog.Host.Repositories.Interfaces;
+﻿using Catalog.Host.Configurations;
+using Catalog.Host.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace Catalog.Host.Controllers;
 
@@ -8,71 +9,75 @@ namespace Catalog.Host.Controllers;
 [Route("[controller]")]
 public class CatalogBffController : ControllerBase
 {
-    private readonly ICatalogBffRepository _catalogBffRepository;
-    private readonly ICatalogTypeRepository _catalogTypeRepository;
-    private readonly ICatalogBrandRepository _catalogBrandRepository;
-    private readonly ICatalogItemRepository _catalogItemRepository;
+    private readonly ILogger<CatalogBffController> _logger;
+    private readonly ICatalogBffService _catalogService;
+    private readonly IOptions<CatalogConfig> _config;
+
     public CatalogBffController(
-        ICatalogBffRepository catalogBffRepository,
-        ICatalogTypeRepository catalogTypeRepository,
-        ICatalogBrandRepository catalogBrandRepository,
-        ICatalogItemRepository catalogItemRepository)
+        ILogger<CatalogBffController> logger,
+        ICatalogBffService catalogService,
+        IOptions<CatalogConfig> config)
     {
-        _catalogBffRepository = catalogBffRepository;
-        _catalogBrandRepository = catalogBrandRepository;
-        _catalogItemRepository = catalogItemRepository;
-        _catalogTypeRepository = catalogTypeRepository;
+        _logger = logger;
+        _catalogService = catalogService;
+        _config = config;
     }
 
-    [HttpGet("Items")]
-    public async Task<IEnumerable<CatalogItem>> GetItems()
-    {  
-        return await _catalogItemRepository.GetItems();
-    
-    }
-    
-    [HttpGet("Brands")]
-    public async Task<IEnumerable<CatalogBrand>> GetBrands()
+    [HttpPost("items")]
+    public async Task<IActionResult> GetItemsByPageAsync([FromBody] PaginatedItemsRequest request)
     {
-        return await _catalogBrandRepository.GetBrands();
+        var result = await _catalogService.GetCatalogItemsAsync(request);
+        return Ok(result);
     }
-    
-    [HttpGet("Types")]
-    public async Task<IEnumerable<CatalogType>> GetTypes()
+
+    [HttpGet("item/{id}")]
+    public async Task<IActionResult> GetItemByIdAsync(Guid id)
     {
-        return await _catalogTypeRepository.GetTypes();
+        var result = await _catalogService.GetItemByIdAsync(id);
+        return Ok(result);
     }
-    
-    [HttpGet("ByBrand")]
-    public async Task<ActionResult<CatalogItem>> GetItemByBrand(Guid id)
+
+    [HttpGet("items/brand/{brandId}")]
+    public async Task<IActionResult> GetItemsByBrandAsync(Guid brandId)
     {
-        var item =  await _catalogBffRepository.GetCatalogItemByCatalogBrand(id);
-        if (item == null)
-        {
-            return StatusCode(404);
-        }
-        return item;
+        var result = await _catalogService.GetItemsByBrandAsync(brandId);
+        return Ok(result);
     }
-    
-    [HttpGet("ById")]
-    public async Task<ActionResult<CatalogItem>> GetItemById(Guid id)
+
+    [HttpGet("items/type/{typeId}")]
+    public async Task<IActionResult> GetItemsByTypeAsync(Guid typeId)
     {
-        var item =  await _catalogBffRepository.GetCatalogItemById(id);
-        if (item == null)
-        {
-            return StatusCode(404);
-        }
-        return item;
+        var result = await _catalogService.GetItemsByTypeAsync(typeId);
+        return Ok(result);
     }
-    
-    [HttpGet("ByType")]
-    public async Task<ActionResult<CatalogItem>> GetItemByType(Guid id)
+
+    //Brand
+    [HttpGet("brand/{id}")]
+    public async Task<IActionResult> GetBrandByIdAsync(Guid id)
     {
-        var item =  await _catalogBffRepository.GetCatalogTypeByCatalogType(id);
-        if (item == null)
-        {
-            return StatusCode(404);
-        }
-        return item;
+        var result = await _catalogService.GetBrandByIdAsync(id);
+        return Ok(result);
+    }
+
+    [HttpGet("brands")]
+    public async Task<IActionResult> GetBrandsByPageAsync([FromQuery] int pageIndex = 1, [FromQuery] int pageSize = 10)
+    {
+        var result = await _catalogService.GetBrandsByPageAsync(pageIndex, pageSize);
+        return Ok(result);
+    }
+
+    //Type
+    [HttpGet("type/{id}")]
+    public async Task<IActionResult> GetTypeByIdAsync(Guid id)
+    {
+        var result = await _catalogService.GetTypeByIdAsync(id);
+        return Ok(result);
+    }
+
+    [HttpGet("types")]
+    public async Task<IActionResult> GetTypesByPageAsync([FromQuery] int pageIndex = 1, [FromQuery] int pageSize = 10)
+    {
+        var result = await _catalogService.GetTypesByPageAsync(pageIndex, pageSize);
+        return Ok(result);
     }
 }

@@ -17,11 +17,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28184a92-e4c4-4ccd-a5a7-4d2f257528dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.eShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.eShop/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/config/applicationhost.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/AppDbContextMock.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/Catalog.UnitTests.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/Controllers/CatalogItemControllerTests.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/GlobalUsings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/IBaseRepositoryMock.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/Repositories/BaseRepositoryTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Catalog.Host.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Catalog.Host.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogBffController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogBffController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogBrandController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogBrandController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogItemController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogItemController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogTypeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogTypeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Mapping/MappingProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Mapping/MappingProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Models/DTOs/CatalogItemDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Models/DTOs/CatalogItemDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/BaseRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/CatalogBffRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/CatalogBrandRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/CatalogBrandRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/CatalogItemRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/CatalogItemRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/CatalogTypeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/CatalogTypeRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/Interfaces/IBaseRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/Interfaces/ICatalogBffRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/Interfaces/ICatalogBrandRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/Interfaces/ICatalogBrandRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/Interfaces/ICatalogItemRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/Interfaces/ICatalogItemRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/Interfaces/ICatalogTypeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/Interfaces/ICatalogTypeRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/Controllers/CatalogController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Controllers/CatalogController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/MVC.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/MVC.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/Services/CatalogService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Services/CatalogService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/Services/HttpClientService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Services/HttpClientService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/ViewModels/Catalog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/ViewModels/Catalog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/ViewModels/CatalogBrand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/ViewModels/CatalogBrand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/ViewModels/CatalogItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/ViewModels/CatalogItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/ViewModels/CatalogType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/ViewModels/CatalogType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/Views/Shared/Error.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Views/Shared/Error.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/Views/Shared/_Layout.cshtml.css" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Views/Shared/_Layout.cshtml.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/Views/Shared/_ValidationScriptsPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Views/Shared/_ValidationScriptsPartial.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/wwwroot/css/site.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/wwwroot/favicon.ico" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/eShop.sln" beforeDir="false" afterPath="$PROJECT_DIR$/eShop.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,25 +65,49 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/Mvc/Mvc.Core/src/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/Mvc/Mvc.Core/src/Infrastructure/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/Mvc/Mvc.ViewFeatures/src/Controller.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/Mvc/Mvc.ViewFeatures/src/ModelExplorer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/efcore/e017dc125bef2f604f85befd8ff27544a5a67c38/src/EFCore.Relational/Storage/RelationalTransaction.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/efcore/e017dc125bef2f604f85befd8ff27544a5a67c38/src/EFCore/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/efcore/e017dc125bef2f604f85befd8ff27544a5a67c38/src/EFCore/Extensions/EntityFrameworkQueryableExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/efcore/e017dc125bef2f604f85befd8ff27544a5a67c38/src/EFCore/Infrastructure/DatabaseFacade.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/efcore/e017dc125bef2f604f85befd8ff27544a5a67c38/src/EFCore/Internal/InternalDbSet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/coreclr/System.Private.CoreLib/src/System/Runtime/CompilerServices/RuntimeHelpers.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/coreclr/System.Private.CoreLib/src/System/Type.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/Microsoft.Extensions.Http/src/HttpClientFactoryExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/Microsoft.Extensions.Options/src/UnnamedOptionsManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Linq.Expressions/src/System/Linq/Expressions/ParameterExpression.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Linq/src/System/Linq/Select.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Linq/src/System/Linq/ToCollection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Net.Http/src/System/Net/Http/HttpClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/DateTime.Windows.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/DateTimeOffset.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Guid.Windows.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Runtime/CompilerServices/AsyncTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/String.Manipulation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Threading/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Task.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/ValueTask.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Threading/ThreadPoolWorkQueue.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/34e54cf52b4a4c2b82645ccc3a46837e5e000/10/6fd16ccf/ProxyGenerator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/34e54cf52b4a4c2b82645ccc3a46837e5e000/57/9c681939/AbstractInvocation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/109fd7428848d7e3885e256f1afd90efb43c3483fd4c136f1a2f1389cca69e/TypePair.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5af9ddc9d631dc656452ccf55cadfa13b41b9f23bb342cf682e5672c2b2816/NonVoidSetupPhrase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ed6f5e3b5f78ae215ce2f37f9ca779fea6e31feb6dfdf8b5683b9b27ba54/JsonConvert.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/829d6ac6e62b9bee9ef8e79e827d87d0c31a7c2eefbc354135d9a8f2c4deb/Mapper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a54edce4e91cb965fe389033e2b24044e512ee99e302e41c8c2909733443b14/CastleProxyFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a81ee8c4b239a5f464b996b6cb5ab701e2bca7511eb164cb746c7590c3b6b1/Mock`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -55,7 +115,7 @@
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="Toolset" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -80,6 +140,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "MSS#1",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -99,7 +160,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Multi-Launch.Multi-Launch: eShop">
+  <component name="RunManager" selected=".NET Launch Settings Profile.MVC: https">
     <configuration name="Catalog.Host: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Catalog/Catalog.Host/Catalog.Host.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -335,7 +396,11 @@
       <workItem from="1704193627021" duration="4117000" />
       <workItem from="1704280440281" duration="82000" />
       <workItem from="1704280547670" duration="12767000" />
-      <workItem from="1704395602609" duration="2190000" />
+      <workItem from="1704395602609" duration="3423000" />
+      <workItem from="1704479463170" duration="9449000" />
+      <workItem from="1704533635976" duration="5179000" />
+      <workItem from="1704571930383" duration="1361000" />
+      <workItem from="1704617536460" duration="6775000" />
     </task>
     <task id="LOCAL-00001" summary="-add domain models&#10;-add configurations for domain model&#10;-add DbContext">
       <option name="closed" value="true" />
@@ -401,7 +466,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703582654075</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="MVC /http bad connection">
+      <option name="closed" value="true" />
+      <created>1704398938665</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1704398938665</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,7 +501,8 @@
     <MESSAGE value="--create UnitTests for CatatlogItemController" />
     <MESSAGE value="--created UnitTests for Repository" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="MVC /http bad connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="MVC /http bad connection" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -436,34 +510,47 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Catalog.UnitTests/Repositories/BaseRepositoryTest.cs</url>
           <line>44</line>
-          <properties documentPath="D:\dev\A_LEVEL\eShop\Catalog.UnitTests\Repositories\BaseRepositoryTest.cs" initialLine="43" containingFunctionPresentation="Method 'Create_RerurnSuccess'">
-            <startOffsets>
-              <option value="979" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1035" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\dev\A_LEVEL\eShop\Catalog.UnitTests\Repositories\BaseRepositoryTest.cs" initialLine="43" containingFunctionPresentation="Method 'Create_RerurnSuccess'" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Catalog.UnitTests/Repositories/BaseRepositoryTest.cs</url>
           <line>69</line>
-          <properties documentPath="D:\dev\A_LEVEL\eShop\Catalog.UnitTests\Repositories\BaseRepositoryTest.cs" initialLine="83" containingFunctionPresentation="Method 'Delete_ReturnsIntSuccess'">
+          <properties documentPath="D:\dev\A_LEVEL\eShop\Catalog.UnitTests\Repositories\BaseRepositoryTest.cs" initialLine="83" containingFunctionPresentation="Method 'Delete_ReturnsIntSuccess'" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/MVC/Controllers/CatalogController.cs</url>
+          <line>21</line>
+          <properties documentPath="D:\dev\A_LEVEL\eShop\MVC\Controllers\CatalogController.cs" initialLine="21" containingFunctionPresentation="Method 'Index'">
             <startOffsets>
-              <option value="1661" />
+              <option value="697" />
             </startOffsets>
             <endOffsets>
-              <option value="1662" />
+              <option value="698" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="3" />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogItemController.cs</url>
+          <line>32</line>
+          <properties documentPath="D:\dev\A_LEVEL\eShop\Catalog\Catalog.Host\Controllers\CatalogItemController.cs" initialLine="32" containingFunctionPresentation="Method 'GetByPage'">
+            <startOffsets>
+              <option value="1046" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1047" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#Microsoft.EntityFrameworkCore.DbContext" memberName="_serviceScope" />
+        <PinnedItemInfo parentTag="Type#Catalog.Host.Data.PaginatedItems`1" memberName="Data" />
         <PinnedItemInfo parentTag="Frame#Catalog.Host.Repositories.BaseRepository`1.FindAll" memberName="this" />
       </pinned-members>
     </pin-to-top-manager>

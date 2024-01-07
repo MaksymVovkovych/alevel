@@ -14,7 +14,7 @@ public class CatalogController : Controller
         _catalogService = catalogService;
     }
 
-    public async Task<IActionResult> Index(int? brandFilterApplied, int? typeFIlterApplied, int? page = 0, int? itemsPage = 6)
+    public async Task<IActionResult> Index(int? brandFilterApplied, int? typeFIlterApplied, int? page = 1, int? itemsPage = 6)
     {
 
         var catalog = await _catalogService.GetCatalogItems(page.Value, itemsPage.Value, brandFilterApplied, typeFIlterApplied);
@@ -25,7 +25,7 @@ public class CatalogController : Controller
         var info = new PaginationInfo()
         {
             ActualPage = page.Value,
-            ItemsPerPage = catalog.Data.Count,
+            ItemsPerPage = catalog.Count,
             TotalItems = catalog.Count,
             TotalPages = (int)Math.Ceiling((decimal)catalog.Count / itemsPage.Value),
             

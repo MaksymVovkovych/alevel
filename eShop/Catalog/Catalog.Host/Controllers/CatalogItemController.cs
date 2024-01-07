@@ -1,8 +1,14 @@
-﻿using AutoMapper;
+﻿using System.Net;
+using AutoMapper;
 using Catalog.Host.Data;
 using Catalog.Host.Data.Entity;
 using Catalog.Host.Models.DTOs;
 using Catalog.Host.Repositories.Interfaces;
+using Catalog.Host.Services.Interfaces;
+using Catalog.Host.Services.Interfaces.AddResponses;
+using Catalog.Host.Services.Interfaces.DeleteRequests;
+using Catalog.Host.Services.Interfaces.UpdateRequests;
+using Catalog.Host.Services.Interfaces.UpdateResponses;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Catalog.Host.Controllers;
@@ -11,52 +17,52 @@ namespace Catalog.Host.Controllers;
 [Route("[controller]")]
 public class CatalogItemController : ControllerBase
 {
-    private readonly IMapper _mapper;
-    private readonly ICatalogItemRepository _catalogItemRepository;
+    private readonly ILogger<CatalogItemController> _logger;
+    private readonly ICatalogItemService _catalogItemService;
 
-    public CatalogItemController(ICatalogItemRepository catalogItemRepository, IMapper mapper)
+    public CatalogItemController(
+        ILogger<CatalogItemController> logger,
+        ICatalogItemService catalogItemService)
     {
-        _mapper = mapper;
-        _catalogItemRepository = catalogItemRepository;
-
+        _logger = logger;
+        _catalogItemService = catalogItemService;
     }
 
-    [HttpPost]
-    public async Task<ActionResult<CatalogItem>> PostItem([FromBody] CatalogItem catalogItem)
+    [HttpGet("items")]
+    public async Task<IActionResult> GetByPage(int pageIndex = 1, int pageSize = 10)
     {
-        var guid = Guid.NewGuid();
-        catalogItem.Id = guid;
-        var result = await _catalogItemRepository.CreateCatalogItem(catalogItem); 
+        var result = await _catalogItemService.GetByPageAsyncHttpGet(pageIndex, pageSize);
         return Ok(result);
     }
-    
-    [HttpPut("{id}")]
-    public async Task<ActionResult<CatalogItem>> PutItem([FromBody] CatalogItemDto catalogItemDto)
-    {
-        var brand = await _catalogItemRepository.GetItemById(catalogItemDto.Id);
 
-        if (brand != null)
-        {
-            var brandMapped = _mapper.Map(catalogItemDto, brand);
-            var result = await _catalogItemRepository.UpdateCatalogItem(brandMapped);
-            return Ok(result);
-        }
-        else
-        {
-            return NotFound(); 
-        }
+    [HttpPost("items")]
+    [ProducesResponseType(typeof(AddCatalogItemResponse<int?>), (int)HttpStatusCode.OK)]
+    public async Task<IActionResult> AddAsync(AddCatalogItemRequest request)
+    {
+        var result = await _catalogItemService.AddAsync(request);
+        return Ok(new AddCatalogItemResponse<Guid?>() { Id = result });
     }
-    
-    [HttpDelete]
-    public async Task<ActionResult<CatalogItem>> DeleteItem(Guid id)
-    {
-        var item = await _catalogItemRepository.GetItemById(id);
-        if (item == null)
-        {
-            return NotFound();
-        }
 
-        var result = await _catalogItemRepository.DeleteCatalogItem(item);
+    [HttpPut("items/{id}")]
+    [ProducesResponseType(typeof(UpdateCatalogItemResponse<int>), (int)HttpStatusCode.OK)]
+    public async Task<IActionResult> UpdateItem(int id, UpdateCatalogItemRequest request)
+    {
+        var result = await _catalogItemService.UpdateAsync(request);
         return Ok(result);
+    }
+
+    [HttpDelete("items/{id}")]
+    [ProducesResponseType((int)HttpStatusCode.OK)]
+    public async Task<IActionResult> DeleteItem(Guid id)
+    {
+        try
+        {
+            await _catalogItemService.DeleteAsync(new DeleteCatalogItemRequest() { Id = id });
+            return Ok("Item successfully deleted");
+        }
+        catch (KeyNotFoundException)
+        {
+            return NotFound("Item not found");
+        }
     }
 }

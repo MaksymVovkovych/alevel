@@ -34,7 +34,7 @@ public class CatalogService : ICatalogService
             filters.Add(CatalogTypeFilter.Type, type.Value);
         }
         
-        var result = await _httpClientService.SendAsync<Catalog, PaginatedItemsRequest<CatalogTypeFilter>>($"{_settings.Value.CatalogUrl}/Items",
+        var result = await _httpClientService.SendAsync<Catalog, PaginatedItemsRequest<CatalogTypeFilter>>($"{_settings.Value.CatalogUrl}/items",
             HttpMethod.Post, 
             new PaginatedItemsRequest<CatalogTypeFilter>()
             {

@@ -22,4 +22,8 @@
       <_ContentIncludedByDefault Remove="Views\Home\Privacy.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="wwwroot\css\shared\components\" />
+    </ItemGroup>
+
 </Project>

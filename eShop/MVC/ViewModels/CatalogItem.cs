@@ -2,7 +2,7 @@ namespace MVC.ViewModels;
 
 public class CatalogItem
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
 
     public string Name { get; set; } = null!;
 
