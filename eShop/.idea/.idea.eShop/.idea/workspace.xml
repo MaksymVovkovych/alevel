@@ -16,49 +16,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28184a92-e4c4-4ccd-a5a7-4d2f257528dd" name="Changes" comment="">
+    <list default="true" id="28184a92-e4c4-4ccd-a5a7-4d2f257528dd" name="Changes" comment="--changed web api &#10;--connect mvc for api">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.eShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.eShop/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/AppDbContextMock.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/Catalog.UnitTests.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/Controllers/CatalogItemControllerTests.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/GlobalUsings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/IBaseRepositoryMock.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog.UnitTests/Repositories/BaseRepositoryTest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Catalog.Host.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Catalog.Host.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogBffController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogBffController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogBrandController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogBrandController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogItemController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogItemController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogTypeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogTypeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Mapping/MappingProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Mapping/MappingProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Models/DTOs/CatalogItemDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Models/DTOs/CatalogItemDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/BaseRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/CatalogBffRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/CatalogBrandRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/CatalogBrandRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/CatalogItemRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/CatalogItemRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/CatalogTypeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/CatalogTypeRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/Interfaces/IBaseRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/Interfaces/ICatalogBffRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/Interfaces/ICatalogBrandRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/Interfaces/ICatalogBrandRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/Interfaces/ICatalogItemRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/Interfaces/ICatalogItemRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/Interfaces/ICatalogTypeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Repositories/Interfaces/ICatalogTypeRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/Controllers/CatalogController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Controllers/CatalogController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/MVC.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/MVC.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/Services/CatalogService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Services/CatalogService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/Services/HttpClientService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Services/HttpClientService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/ViewModels/Catalog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/ViewModels/Catalog.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/ViewModels/CatalogBrand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/ViewModels/CatalogBrand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/ViewModels/CatalogItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/ViewModels/CatalogItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/ViewModels/CatalogType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/ViewModels/CatalogType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/Views/Shared/Error.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Views/Shared/Error.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/Views/Shared/_Layout.cshtml.css" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Views/Shared/_Layout.cshtml.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/Views/Shared/_ValidationScriptsPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Views/Shared/_ValidationScriptsPartial.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/wwwroot/css/site.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/wwwroot/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eShop.sln" beforeDir="false" afterPath="$PROJECT_DIR$/eShop.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proxy/default.conf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +72,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a54edce4e91cb965fe389033e2b24044e512ee99e302e41c8c2909733443b14/CastleProxyFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a81ee8c4b239a5f464b996b6cb5ab701e2bca7511eb164cb746c7590c3b6b1/Mock`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b187261058fa986938df785f054eb6195e6a67e694894827255e0b7d7cf3/Mock.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/dev/A_LEVEL/eShop/MVC/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -137,8 +98,12 @@
     ".NET Launch Settings Profile.MVC: https.executor": "Debug",
     "9f5201c4-1c75-4e5c-a5d9-0e19d86b2ee7.executor": "Debug",
     "Docker.Catalog.Host/Dockerfile.executor": "Debug",
+    "Docker.SolutionItems/docker-compose.yaml.catalog.api: Compose Deployment.executor": "Run",
+    "Docker.SolutionItems/docker-compose.yaml.nginx: Compose Deployment.executor": "Run",
+    "Docker.SolutionItems/docker-compose.yaml: Compose Deployment.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "XThreadsFramesViewSplitterKey": "0.42675158",
     "git-widget-placeholder": "MSS#1",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -160,7 +125,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.MVC: https">
+  <component name="RunManager" selected="Docker.SolutionItems/docker-compose.yaml: Compose Deployment">
     <configuration name="Catalog.Host: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Catalog/Catalog.Host/Catalog.Host.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -349,6 +314,47 @@
       <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
+    <configuration name="SolutionItems/docker-compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="SolutionItems/docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SolutionItems/docker-compose.yaml.catalog.api: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="catalog.api" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="SolutionItems/docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SolutionItems/docker-compose.yaml.nginx: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="nginx" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="SolutionItems/docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
       <deployment type="dockerfile">
         <settings />
@@ -367,8 +373,18 @@
       <item itemvalue="Docker.Catalog.Host/Dockerfile" />
       <item itemvalue="Docker.MVC/Dockerfile" />
       <item itemvalue="Docker.Proxy/Dockerfile" />
+      <item itemvalue="Docker.SolutionItems/docker-compose.yaml.catalog.api: Compose Deployment" />
+      <item itemvalue="Docker.SolutionItems/docker-compose.yaml.nginx: Compose Deployment" />
+      <item itemvalue="Docker.SolutionItems/docker-compose.yaml: Compose Deployment" />
       <item itemvalue="Multi-Launch.Multi-Launch: eShop" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.SolutionItems/docker-compose.yaml: Compose Deployment" />
+        <item itemvalue="Docker.SolutionItems/docker-compose.yaml.nginx: Compose Deployment" />
+        <item itemvalue="Docker.SolutionItems/docker-compose.yaml.catalog.api: Compose Deployment" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -400,7 +416,7 @@
       <workItem from="1704479463170" duration="9449000" />
       <workItem from="1704533635976" duration="5179000" />
       <workItem from="1704571930383" duration="1361000" />
-      <workItem from="1704617536460" duration="6775000" />
+      <workItem from="1704617536460" duration="13300000" />
     </task>
     <task id="LOCAL-00001" summary="-add domain models&#10;-add configurations for domain model&#10;-add DbContext">
       <option name="closed" value="true" />
@@ -474,7 +490,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704398938665</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="--changed web api &#10;--connect mvc for api">
+      <option name="closed" value="true" />
+      <created>1704624795087</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1704624795087</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -502,7 +526,8 @@
     <MESSAGE value="--created UnitTests for Repository" />
     <MESSAGE value="." />
     <MESSAGE value="MVC /http bad connection" />
-    <option name="LAST_COMMIT_MESSAGE" value="MVC /http bad connection" />
+    <MESSAGE value="--changed web api &#10;--connect mvc for api" />
+    <option name="LAST_COMMIT_MESSAGE" value="--changed web api &#10;--connect mvc for api" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
