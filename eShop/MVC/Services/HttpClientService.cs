@@ -1,6 +1,8 @@
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using IdentityModel.Client;
+using Microsoft.AspNetCore.Authentication;
 using MVC.Models.Enums;
 using MVC.Models.Requests;
 using MVC.Services.Interfaces;
@@ -12,15 +14,25 @@ namespace MVC.Services
     public class HttpClientService : IHttpClientService
     {
         private readonly IHttpClientFactory _clientFactory;
-        
-        public HttpClientService(IHttpClientFactory clientFactory)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public HttpClientService(
+            IHttpClientFactory clientFactory,
+            IHttpContextAccessor httpContextAccessor)
         {
             _clientFactory = clientFactory;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<TResponse> SendAsync<TResponse, TRequest>(string url, HttpMethod method, TRequest? content)
         {
             var client = _clientFactory.CreateClient();
+
+            var token = await _httpContextAccessor.HttpContext.GetTokenAsync("access_token");
+            if (!string.IsNullOrEmpty(token))
+            {
+                client.SetBearerToken(token);
+            }
 
             var httpMessage = new HttpRequestMessage();
             httpMessage.RequestUri = new Uri(url);
@@ -37,17 +49,11 @@ namespace MVC.Services
             if (result.IsSuccessStatusCode)
             {
                 var resultContent = await result.Content.ReadAsStringAsync();
-
-                if (string.IsNullOrEmpty(resultContent))
-                {
-                    return default(TResponse)!;
-                }
-
-                var response = JsonConvert.DeserializeObject<TResponse>(resultContent) !;
-                return response;
+                var response = JsonConvert.DeserializeObject<TResponse>(resultContent);
+                return response!;
             }
 
-            return default(TResponse)!;
+            return default(TResponse) !;
         }
     }
 }

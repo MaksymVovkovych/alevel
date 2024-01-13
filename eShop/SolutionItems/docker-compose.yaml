@@ -30,13 +30,14 @@ services:
       - 5001:5001
   
   nginx:
-    image: nginx
+    image: nginx:latest
     container_name: lde.nginx
     ports:
-      - 80:80
+      - 8080:8080
     volumes:
-      - ../Proxy/gateway/nginx/conf.d:/etc/nginx/conf.d
-      - ../Proxy/assets:/var/www/assets
+      - ./Proxy/gateway/nginx/conf.d:/etc/nginx/conf.d
+      - ./Proxy/assets:/var/www/assets
+    
   pgadmin4:
     image: dpage/pgadmin4
     container_name: lde.pgadmin4

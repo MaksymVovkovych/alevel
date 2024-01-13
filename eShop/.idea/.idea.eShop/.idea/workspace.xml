@@ -7,6 +7,8 @@
     <projectFile profileName="IIS Express">Catalog/Catalog.csproj</projectFile>
     <projectFile profileName="http">Catalog/Catalog.csproj</projectFile>
     <projectFile profileName="https">Catalog/Catalog.csproj</projectFile>
+    <projectFile profileName="SelfHost">IdentityServer/IdentityServer.csproj</projectFile>
+    <projectFile profileName="MVC">IdentityServer/IdentityServer/IdentityServer.csproj</projectFile>
     <projectFile profileName="IIS Express">MVC/MVC.csproj</projectFile>
     <projectFile profileName="http">MVC/MVC.csproj</projectFile>
     <projectFile profileName="https">MVC/MVC.csproj</projectFile>
@@ -16,9 +18,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28184a92-e4c4-4ccd-a5a7-4d2f257528dd" name="Changes" comment="--changed web api &#10;--connect mvc for api">
+    <list default="true" id="28184a92-e4c4-4ccd-a5a7-4d2f257528dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.eShop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.eShop/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proxy/default.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Catalog.Host.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Catalog.Host.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogBffController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogBffController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogBrandController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogBrandController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogItemController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogItemController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogTypeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogTypeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Mapping/CatalogGetItemPictureResolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Mapping/CatalogGetItemPictureResolver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Mapping/MappingProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Mapping/MappingProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Models/DTOs/CatalogGetItemDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Models/DTOs/CatalogGetItemDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/Services/CatalogItemService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/Services/CatalogItemService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Catalog/Catalog.Host/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Catalog/Catalog.Host/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/MVC.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/MVC.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/Services/HttpClientService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Services/HttpClientService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/Views/Catalog/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Views/Catalog/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/Views/Shared/Error.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Views/Shared/Error.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/Views/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/Views/_ViewImports.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVC/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolutionItems/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/SolutionItems/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eShop.sln" beforeDir="false" afterPath="$PROJECT_DIR$/eShop.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,11 +59,31 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;state&quot;: &quot;OPEN&quot;
+    }
+  ],
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="2d62a5c9-0d30-45f5-98b6-91df16bffdbb" />
+        <option name="url" value="https://github.com/Joker3383/alevel" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/Mvc/Mvc.Core/src/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/Mvc/Mvc.Core/src/Infrastructure/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/Mvc/Mvc.Razor/src/RazorPageOfT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/Mvc/Mvc.ViewFeatures/src/Controller.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/Mvc/Mvc.ViewFeatures/src/ModelExplorer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/Mvc/Mvc.ViewFeatures/src/ViewDataDictionaryOfT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/efcore/e017dc125bef2f604f85befd8ff27544a5a67c38/src/EFCore.Relational/Storage/RelationalTransaction.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/efcore/e017dc125bef2f604f85befd8ff27544a5a67c38/src/EFCore/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/efcore/e017dc125bef2f604f85befd8ff27544a5a67c38/src/EFCore/Extensions/EntityFrameworkQueryableExtensions.cs" root0="SKIP_HIGHLIGHTING" />
@@ -53,6 +97,7 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Linq/src/System/Linq/Select.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Linq/src/System/Linq/ToCollection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Net.Http/src/System/Net/Http/HttpClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/HashSet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/DateTime.Windows.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/DateTimeOffset.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Guid.Windows.cs" root0="SKIP_HIGHLIGHTING" />
@@ -63,16 +108,21 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Task.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/ValueTask.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Threading/ThreadPoolWorkQueue.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.Uri/src/System/UriExt.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/34e54cf52b4a4c2b82645ccc3a46837e5e000/10/6fd16ccf/ProxyGenerator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/34e54cf52b4a4c2b82645ccc3a46837e5e000/57/9c681939/AbstractInvocation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/109fd7428848d7e3885e256f1afd90efb43c3483fd4c136f1a2f1389cca69e/TypePair.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/33cf8eb9012b81aac7f9d3aaa73fd94b988461482fc7efd2668fed762ec/ClientCredentialsTokenRequest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5af9ddc9d631dc656452ccf55cadfa13b41b9f23bb342cf682e5672c2b2816/NonVoidSetupPhrase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ed6f5e3b5f78ae215ce2f37f9ca779fea6e31feb6dfdf8b5683b9b27ba54/JsonConvert.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/829d6ac6e62b9bee9ef8e79e827d87d0c31a7c2eefbc354135d9a8f2c4deb/Mapper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a1f796d5be41ca4facff2386eec41925dddc58f8226d4f7284a583f372e376/ProtocolResponse.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a54edce4e91cb965fe389033e2b24044e512ee99e302e41c8c2909733443b14/CastleProxyFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a81ee8c4b239a5f464b996b6cb5ab701e2bca7511eb164cb746c7590c3b6b1/Mock`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b187261058fa986938df785f054eb6195e6a67e694894827255e0b7d7cf3/Mock.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/dev/A_LEVEL/eShop/MVC/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Catalog/Catalog.UnitTests/Controllers/CatalogItemControllerTests.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/IdentityServer/IdentityServer/Config.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MVC/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -93,8 +143,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     ".NET Launch Settings Profile.Catalog.Host: IIS Express.executor": "Debug",
+    ".NET Launch Settings Profile.Catalog.Host: http.executor": "Debug",
     ".NET Launch Settings Profile.Catalog.Host: https.executor": "Debug",
+    ".NET Launch Settings Profile.IdentityServer: MVC.executor": "Run",
+    ".NET Launch Settings Profile.IdentityServer: SelfHost (1).executor": "Debug",
     ".NET Launch Settings Profile.MVC: IIS Express.executor": "Debug",
+    ".NET Launch Settings Profile.MVC: http.executor": "Debug",
     ".NET Launch Settings Profile.MVC: https.executor": "Debug",
     "9f5201c4-1c75-4e5c-a5d9-0e19d86b2ee7.executor": "Debug",
     "Docker.Catalog.Host/Dockerfile.executor": "Debug",
@@ -103,7 +157,6 @@
     "Docker.SolutionItems/docker-compose.yaml: Compose Deployment.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "XThreadsFramesViewSplitterKey": "0.42675158",
     "git-widget-placeholder": "MSS#1",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -125,7 +178,25 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Docker.SolutionItems/docker-compose.yaml: Compose Deployment">
+  <component name="RunManager" selected=".NET Launch Settings Profile.MVC: http">
+    <configuration name="IdentityServer" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/IdentityServer/IdentityServer/bin/Debug/net6.0/IdentityServer.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/IdentityServer/IdentityServer" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/IdentityServer/IdentityServer/IdentityServer.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="net6.0" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
     <configuration name="Catalog.Host: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Catalog/Catalog.Host/Catalog.Host.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -160,6 +231,51 @@
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Catalog/Catalog.Host/Catalog.Host.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
       <option name="LAUNCH_PROFILE_NAME" value="https" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="IdentityServer: MVC" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/IdentityServer/IdentityServer/IdentityServer.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="MVC" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="IdentityServer: SelfHost (1)" type="LaunchSettings" factoryName=".NET Launch Settings Profile" temporary="true">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/IdentityServer/IdentityServer/IdentityServer.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="SelfHost" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="IdentityServer: SelfHost" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/IdentityServer/IdentityServer.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
+      <option name="LAUNCH_PROFILE_NAME" value="SelfHost" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
@@ -241,7 +357,7 @@
           </option>
           <option name="executable">
             <ExecutableSnapshot>
-              <option name="id" value="runConfig:.NET Launch Settings Profile.Catalog.Host: https" />
+              <option name="id" value="runConfig:.NET Launch Settings Profile.Catalog.Host: http" />
             </ExecutableSnapshot>
           </option>
         </ExecutableRowSnapshot>
@@ -253,7 +369,48 @@
           </option>
           <option name="executable">
             <ExecutableSnapshot>
-              <option name="id" value="runConfig:.NET Launch Settings Profile.MVC: https" />
+              <option name="id" value="runConfig:.NET Launch Settings Profile.MVC: http" />
+            </ExecutableSnapshot>
+          </option>
+        </ExecutableRowSnapshot>
+      </rows>
+      <method v="2" />
+    </configuration>
+    <configuration name="all" type="com.intellij.execution.configurations.multilaunch" factoryName="MultiLaunchConfiguration">
+      <rows>
+        <ExecutableRowSnapshot>
+          <option name="condition">
+            <ConditionSnapshot>
+              <option name="type" value="immediately" />
+            </ConditionSnapshot>
+          </option>
+          <option name="executable">
+            <ExecutableSnapshot>
+              <option name="id" value="runConfig:.NET Launch Settings Profile.Catalog.Host: http" />
+            </ExecutableSnapshot>
+          </option>
+        </ExecutableRowSnapshot>
+        <ExecutableRowSnapshot>
+          <option name="condition">
+            <ConditionSnapshot>
+              <option name="type" value="immediately" />
+            </ConditionSnapshot>
+          </option>
+          <option name="executable">
+            <ExecutableSnapshot>
+              <option name="id" value="runConfig:.NET Launch Settings Profile.MVC: http" />
+            </ExecutableSnapshot>
+          </option>
+        </ExecutableRowSnapshot>
+        <ExecutableRowSnapshot>
+          <option name="condition">
+            <ConditionSnapshot>
+              <option name="type" value="immediately" />
+            </ConditionSnapshot>
+          </option>
+          <option name="executable">
+            <ExecutableSnapshot>
+              <option name="id" value="runConfig:.NET Launch Settings Profile.IdentityServer: MVC" />
             </ExecutableSnapshot>
           </option>
         </ExecutableRowSnapshot>
@@ -352,7 +509,10 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
@@ -363,6 +523,8 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue=".NET Launch Settings Profile.IdentityServer: MVC" />
+      <item itemvalue=".NET Launch Settings Profile.IdentityServer: SelfHost" />
       <item itemvalue=".NET Launch Settings Profile.Catalog.Host: http" />
       <item itemvalue=".NET Launch Settings Profile.Catalog.Host: https" />
       <item itemvalue=".NET Launch Settings Profile.Catalog.Host: IIS Express" />
@@ -370,18 +532,22 @@
       <item itemvalue=".NET Launch Settings Profile.MVC: https" />
       <item itemvalue=".NET Launch Settings Profile.MVC: IIS Express" />
       <item itemvalue=".NET Launch Settings Profile.Proxy" />
+      <item itemvalue=".NET Launch Settings Profile.IdentityServer: SelfHost (1)" />
+      <item itemvalue=".NET Project.IdentityServer" />
       <item itemvalue="Docker.Catalog.Host/Dockerfile" />
       <item itemvalue="Docker.MVC/Dockerfile" />
       <item itemvalue="Docker.Proxy/Dockerfile" />
       <item itemvalue="Docker.SolutionItems/docker-compose.yaml.catalog.api: Compose Deployment" />
       <item itemvalue="Docker.SolutionItems/docker-compose.yaml.nginx: Compose Deployment" />
       <item itemvalue="Docker.SolutionItems/docker-compose.yaml: Compose Deployment" />
+      <item itemvalue="Multi-Launch.all" />
       <item itemvalue="Multi-Launch.Multi-Launch: eShop" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.SolutionItems/docker-compose.yaml: Compose Deployment" />
+        <item itemvalue=".NET Launch Settings Profile.IdentityServer: SelfHost (1)" />
         <item itemvalue="Docker.SolutionItems/docker-compose.yaml.nginx: Compose Deployment" />
+        <item itemvalue="Docker.SolutionItems/docker-compose.yaml: Compose Deployment" />
         <item itemvalue="Docker.SolutionItems/docker-compose.yaml.catalog.api: Compose Deployment" />
       </list>
     </recent_temporary>
@@ -416,7 +582,15 @@
       <workItem from="1704479463170" duration="9449000" />
       <workItem from="1704533635976" duration="5179000" />
       <workItem from="1704571930383" duration="1361000" />
-      <workItem from="1704617536460" duration="13300000" />
+      <workItem from="1704617536460" duration="15609000" />
+      <workItem from="1704712482082" duration="12829000" />
+      <workItem from="1704784177085" duration="7498000" />
+      <workItem from="1704793175780" duration="4186000" />
+      <workItem from="1704880583489" duration="2384000" />
+      <workItem from="1704987872369" duration="3028000" />
+      <workItem from="1705053450080" duration="6682000" />
+      <workItem from="1705088660447" duration="1332000" />
+      <workItem from="1705139769188" duration="1629000" />
     </task>
     <task id="LOCAL-00001" summary="-add domain models&#10;-add configurations for domain model&#10;-add DbContext">
       <option name="closed" value="true" />
@@ -498,7 +672,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704624795087</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="--docker-compose">
+      <option name="closed" value="true" />
+      <created>1704634528276</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1704634528276</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,7 +709,8 @@
     <MESSAGE value="." />
     <MESSAGE value="MVC /http bad connection" />
     <MESSAGE value="--changed web api &#10;--connect mvc for api" />
-    <option name="LAST_COMMIT_MESSAGE" value="--changed web api &#10;--connect mvc for api" />
+    <MESSAGE value="--docker-compose" />
+    <option name="LAST_COMMIT_MESSAGE" value="--docker-compose" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -545,30 +728,56 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/MVC/Controllers/CatalogController.cs</url>
-          <line>21</line>
-          <properties documentPath="D:\dev\A_LEVEL\eShop\MVC\Controllers\CatalogController.cs" initialLine="21" containingFunctionPresentation="Method 'Index'">
-            <startOffsets>
-              <option value="697" />
-            </startOffsets>
-            <endOffsets>
-              <option value="698" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Catalog/Catalog.Host/Controllers/CatalogItemController.cs</url>
-          <line>32</line>
+          <line>34</line>
           <properties documentPath="D:\dev\A_LEVEL\eShop\Catalog\Catalog.Host\Controllers\CatalogItemController.cs" initialLine="32" containingFunctionPresentation="Method 'GetByPage'">
             <startOffsets>
-              <option value="1046" />
+              <option value="1100" />
             </startOffsets>
             <endOffsets>
-              <option value="1047" />
+              <option value="1101" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Catalog/Catalog.Host/Mapping/CatalogItemPictureResolver.cs</url>
+          <line>18</line>
+          <properties documentPath="D:\dev\A_LEVEL\eShop\Catalog\Catalog.Host\Mapping\CatalogItemPictureResolver.cs" initialLine="18" containingFunctionPresentation="Method 'Resolve'">
+            <startOffsets>
+              <option value="619" />
+            </startOffsets>
+            <endOffsets>
+              <option value="662" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Catalog/Catalog.Host/Mapping/CatalogItemPictureResolver.cs</url>
+          <line>14</line>
+          <properties documentPath="D:\dev\A_LEVEL\eShop\Catalog\Catalog.Host\Mapping\CatalogItemPictureResolver.cs" initialLine="14" containingFunctionPresentation="Constructor 'CatalogItemPictureResolver'">
+            <startOffsets>
+              <option value="434" />
+            </startOffsets>
+            <endOffsets>
+              <option value="457" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/MVC/Controllers/CatalogController.cs</url>
+          <line>19</line>
+          <properties documentPath="D:\dev\A_LEVEL\eShop\MVC\Controllers\CatalogController.cs" initialLine="19" containingFunctionPresentation="Method 'Index'">
+            <startOffsets>
+              <option value="540" />
+            </startOffsets>
+            <endOffsets>
+              <option value="660" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

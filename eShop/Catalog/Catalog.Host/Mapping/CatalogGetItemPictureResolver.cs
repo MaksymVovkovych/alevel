@@ -6,7 +6,7 @@ using Microsoft.Extensions.Options;
 
 namespace Catalog.Host.Mapping;
 
-public class CatalogGetItemPictureResolver : IMemberValueResolver<CatalogItem, CatalogGetItemDto, string, string>
+public class CatalogGetItemPictureResolver : IMemberValueResolver<CatalogItem, CatalogGetItemDto, string, object>
 {
     private readonly CatalogConfig _config;
 
@@ -15,9 +15,9 @@ public class CatalogGetItemPictureResolver : IMemberValueResolver<CatalogItem, C
         _config = config.Value;
     }
 
-    public string Resolve(CatalogItem source, CatalogGetItemDto destination, string sourceMember, string destMember, ResolutionContext context)
+    public object Resolve(CatalogItem source, CatalogGetItemDto destination, string sourceMember, object destMember, ResolutionContext context)
     {
-        //return $"{_config.Host}/{_config.ImgUrl}/{sourceMember}";
-        return $"/{_config.ImgUrl}/{sourceMember}";
+        return $"{_config.Host}/{_config.ImgUrl}/{sourceMember}";
+        //return $"/{_config.ImgUrl}/{sourceMember}";
     }
 }

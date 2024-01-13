@@ -37,7 +37,7 @@ public class CatalogItemService : BaseDataService<AppDbContext>, ICatalogItemSer
                 Name = item.Name,
                 Description = item.Description,
                 Price = item.Price,
-                PictureFileName = item.PictureFileName,
+                PictureUrl = item.PictureFileName,
                 BrandName = item.CatalogBrand.Brand,
                 TypeName = item.CatalogType.Type
             });

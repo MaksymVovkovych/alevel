@@ -14,6 +14,8 @@ public class MappingProfile : Profile
                 => opt.MapFrom<CatalogItemPictureResolver, string>(c => c.PictureFileName));
         CreateMap<CatalogBrand, CatalogBrandDto>();
         CreateMap<CatalogType, CatalogTypeDto>();
-        CreateMap<CatalogItem, CatalogGetItemDto>();
+        CreateMap<CatalogItem, CatalogGetItemDto>()
+            .ForMember("PictureUrl", opt
+                => opt.MapFrom<CatalogGetItemPictureResolver, string>(c => c.PictureFileName));
     }
 }

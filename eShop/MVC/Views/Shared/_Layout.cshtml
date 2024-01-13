@@ -7,21 +7,21 @@
 
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/shared/app.css" />
-        <link rel="stylesheet" href="~/css/shared/app.component.css" />
+        <link rel="stylesheet" href="~/css/app.css" />
+        <link rel="stylesheet" href="~/css/app.component.css" />
         <link rel="stylesheet" href="~/css/shared/components/header/header.css" />
         <link rel="stylesheet" href="~/css/shared/components/pager/pager.css" />
         <link rel="stylesheet" href="~/css/catalog/catalog.component.css" />
-        <link rel="stylesheet" href="~/css/shared/override.css" type="text/css" />
-        <link rel="stylesheet" href="~/css/shared/site.min.css" type="text/css" />
+        <link rel="stylesheet" href="~/css/override.css" type="text/css" />
+        <link rel="stylesheet" href="~/css/site.min.css" type="text/css" />
 
     </environment>
     <environment names="Staging,Production">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/shared/site.min.css" asp-append-version="true" />
-        <link rel="stylesheet" href="~/css/shared/override.css" type="text/css" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/override.css" type="text/css" />
     </environment>
 </head>
 <body>
@@ -37,6 +37,7 @@
                     </a>
                 </section>
                 
+                @await Html.PartialAsync("_LoginPartial")
             </article>
         </div>
     </header>

@@ -9,11 +9,12 @@ using Catalog.Host.Services.Interfaces.AddResponses;
 using Catalog.Host.Services.Interfaces.DeleteRequests;
 using Catalog.Host.Services.Interfaces.UpdateRequests;
 using Catalog.Host.Services.Interfaces.UpdateResponses;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Catalog.Host.Controllers;
 
-
+[Authorize]
 [ApiController]
 [Route("[controller]")]
 
