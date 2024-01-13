@@ -55,6 +55,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityServer\IdentityServer\IdentityServer.csproj", "{408CBB77-099A-4E46-8FFF-AD6F2C65EBB2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{5F6EF4F4-32C2-478F-90D0-002D0FCAD528}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.Host", "Basket.Host\Basket.Host.csproj", "{F755D4BC-CCDB-4841-8AFD-71933ABA984F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +81,10 @@ Global
 		{408CBB77-099A-4E46-8FFF-AD6F2C65EBB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{408CBB77-099A-4E46-8FFF-AD6F2C65EBB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{408CBB77-099A-4E46-8FFF-AD6F2C65EBB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F755D4BC-CCDB-4841-8AFD-71933ABA984F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F755D4BC-CCDB-4841-8AFD-71933ABA984F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F755D4BC-CCDB-4841-8AFD-71933ABA984F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F755D4BC-CCDB-4841-8AFD-71933ABA984F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,6 +99,7 @@ Global
 		{AA3917D4-B73B-4CFB-A53E-C71C55D8D194} = {AD3E6C93-01F2-46E6-93A8-E5125CC02D16}
 		{ECBD6239-59D3-4664-A910-900CDC074F9E} = {4C9CFA87-D9C2-42A7-988B-C6B425F5504C}
 		{408CBB77-099A-4E46-8FFF-AD6F2C65EBB2} = {2336C239-9F49-42C0-B701-AF96FF0E3762}
+		{F755D4BC-CCDB-4841-8AFD-71933ABA984F} = {5F6EF4F4-32C2-478F-90D0-002D0FCAD528}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EED44069-2EFF-4082-9D7F-FE917306C538}

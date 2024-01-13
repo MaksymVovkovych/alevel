@@ -6,7 +6,8 @@ using Catalog.Host.Repositories;
 using Catalog.Host.Repositories.Interfaces;
 using Catalog.Host.Services;
 using Catalog.Host.Services.Interfaces;
-
+using Infrastructure.Extensions;
+using Infrastructure.Filters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -15,26 +16,48 @@ var configuration = GetConfiguration();
 
 var builder = WebApplication.CreateBuilder(args);
 
-
-
-
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(
-    
-    
-    );
-
-builder.Services.AddAuthentication("Bearer")
-    .AddJwtBearer("Bearer", options =>
+builder.Services.AddControllers(options =>
     {
-        options.Authority = "https://localhost:5001";
-        options.Audience = "catalog.catalogbff";
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateAudience = false
-        };
+        options.Filters.Add(typeof(HttpGlobalExceptionFilter));
+    })
+    .AddJsonOptions(options => options.JsonSerializerOptions.WriteIndented = true);
+
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "eShop- Catalog HTTP API",
+        Version = "v1",
+        Description = "The Catalog Service HTTP API"
     });
+
+    var authority = configuration["Authorization:Authority"];
+    options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+    {
+        Type = SecuritySchemeType.OAuth2,
+        Flows = new OpenApiOAuthFlows()
+        {
+            Implicit = new OpenApiOAuthFlow()
+            {
+                AuthorizationUrl = new Uri($"{authority}/connect/authorize"),
+                TokenUrl = new Uri($"{authority}/connect/token"),
+                Scopes = new Dictionary<string, string>()
+                {
+                    { "mvc", "website" },
+                    { "catalog.catalogbff", "catalog.catalogbff" },
+                    { "catalog.catalogitem", "catalog.catalogitem" }
+                }
+            }
+        }
+    });
+
+    options.OperationFilter<AuthorizeCheckOperationFilter>();
+});
+
+builder.AddConfiguration();
+builder.Services.Configure<CatalogConfig>(configuration);
+
+builder.Services.AddAuthorization(configuration);
 
 builder.Services.AddAutoMapper(typeof(Program));
 
@@ -47,9 +70,7 @@ builder.Services.AddTransient<ICatalogItemService, CatalogItemService>();
 builder.Services.AddTransient<ICatalogBrandService, CatalogBrandService>();
 builder.Services.AddTransient<ICatalogTypeService, CatalogTypeService>();
 
-builder.Services.Configure<CatalogConfig>(configuration);
-
-builder.Services.AddDbContextFactory<AppDbContext>(options => options.UseNpgsql(configuration["ConnectionString"]));
+builder.Services.AddDbContextFactory<AppDbContext>(opts => opts.UseNpgsql(configuration["ConnectionString"]));
 builder.Services.AddScoped<IDbContextWrapper<AppDbContext>, DbContextWrapper<AppDbContext>>();
 
 builder.Services.AddCors(options =>
@@ -65,38 +86,40 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+app.UseSwagger()
+    .UseSwaggerUI(setup =>
+    {
+        setup.SwaggerEndpoint($"{configuration["PathBase"]}/swagger/v1/swagger.json", "Catalog.API V1");
+        setup.OAuthClientId("catalogswaggerui");
+        setup.OAuthAppName("Catalog Swagger UI");
+    });
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-    app.UseCors("CorsPolicy");
-}
+app.UseRouting();
+app.UseCors("CorsPolicy");
 
 app.UseAuthentication();
 app.UseAuthorization();
-//app.UseHttpsRedirection();
-app.MapControllers();
 
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapDefaultControllerRoute();
+    endpoints.MapControllers();
+});
 
-
-CreateDbIfNotExist(app);
-
-
+CreateDbIfNotExists(app);
 app.Run();
-
 
 IConfiguration GetConfiguration()
 {
-    var configurationBuilder = new ConfigurationBuilder()
+    var builder = new ConfigurationBuilder()
         .SetBasePath(Directory.GetCurrentDirectory())
-        .AddJsonFile("appsettings.json", optional: false, reloadOnChange: false)
+        .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
         .AddEnvironmentVariables();
-    return configurationBuilder.Build();
+
+    return builder.Build();
 }
 
-
-void CreateDbIfNotExist(IHost host)
+void CreateDbIfNotExists(IHost host)
 {
     using (var scope = host.Services.CreateScope())
     {
@@ -105,7 +128,7 @@ void CreateDbIfNotExist(IHost host)
         {
             var context = services.GetRequiredService<AppDbContext>();
 
-            DbInitializer.Initialize(context).GetAwaiter().GetResult();
+            DbInitializer.Initialize(context).Wait();
         }
         catch (Exception ex)
         {
