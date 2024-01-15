@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{73E240C0-07BA-485B-A9BF-807719502646}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityServer", "{99224733-FEBB-495B-A533-EB8583A74435}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Proxy", "Proxy", "{AD803717-C853-447C-A849-BB38BCF66697}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{57DA543A-B82D-43BD-A8BB-BAEB07EEAF79}"
+	ProjectSection(SolutionItems) = preProject
+		Tools\docker-compose.yaml = Tools\docker-compose.yaml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Host", "Catalog\Catalog.Host\Catalog.Host.csproj", "{62DEE3FD-E149-4E12-B878-231F0CBAA57E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.UnitTest", "Catalog\Catalog.UnitTest\Catalog.UnitTest.csproj", "{B1C520CA-D5C3-4813-BD1C-8750FD4B6104}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityServer\IdentityServer\IdentityServer.csproj", "{ACFC9882-EA0E-4548-BB88-B8DDF6AB189B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gateway", "gateway", "{95A01A04-ED39-4CF2-AEC3-A8B8429E75C7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nginx", "nginx", "{7B84969D-5D1F-43C3-8DB9-CA2E18A310D5}"
+	ProjectSection(SolutionItems) = preProject
+		Proxy\gateway\nginx\default.conf = Proxy\gateway\nginx\default.conf
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{62DEE3FD-E149-4E12-B878-231F0CBAA57E} = {73E240C0-07BA-485B-A9BF-807719502646}
+		{B1C520CA-D5C3-4813-BD1C-8750FD4B6104} = {73E240C0-07BA-485B-A9BF-807719502646}
+		{ACFC9882-EA0E-4548-BB88-B8DDF6AB189B} = {99224733-FEBB-495B-A533-EB8583A74435}
+		{95A01A04-ED39-4CF2-AEC3-A8B8429E75C7} = {AD803717-C853-447C-A849-BB38BCF66697}
+		{7B84969D-5D1F-43C3-8DB9-CA2E18A310D5} = {95A01A04-ED39-4CF2-AEC3-A8B8429E75C7}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62DEE3FD-E149-4E12-B878-231F0CBAA57E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62DEE3FD-E149-4E12-B878-231F0CBAA57E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62DEE3FD-E149-4E12-B878-231F0CBAA57E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62DEE3FD-E149-4E12-B878-231F0CBAA57E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1C520CA-D5C3-4813-BD1C-8750FD4B6104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1C520CA-D5C3-4813-BD1C-8750FD4B6104}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1C520CA-D5C3-4813-BD1C-8750FD4B6104}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1C520CA-D5C3-4813-BD1C-8750FD4B6104}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACFC9882-EA0E-4548-BB88-B8DDF6AB189B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACFC9882-EA0E-4548-BB88-B8DDF6AB189B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACFC9882-EA0E-4548-BB88-B8DDF6AB189B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACFC9882-EA0E-4548-BB88-B8DDF6AB189B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
