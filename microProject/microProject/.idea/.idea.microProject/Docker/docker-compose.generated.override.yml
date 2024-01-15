@@ -1,0 +1,39 @@
+# This is a generated file. Not intended for manual editing.
+version: "2.23"
+services:
+  catalog.api:
+    build:
+      context: "D:\\dev\\A_LEVEL\\microProject\\microProject\\Tools"
+      dockerfile: "../Catalog/Catalog.Host/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/Catalog.Host.dll"
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "catalog.host:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\vovko\\.nuget\\packages:/home/app/.nuget/packages"
+    - "D:\\dev\\A_LEVEL\\microProject\\microProject\\Catalog\\Catalog.Host:/app:rw"
+    - "D:\\dev\\A_LEVEL\\microProject\\microProject:/src:rw"
+    working_dir: "/app"
+  identityserver:
+    build:
+      context: "D:\\dev\\A_LEVEL\\microProject\\microProject\\Tools"
+      dockerfile: "../IdentityServer/IdentityServer/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/netcoreapp3.1/IdentityServer.dll"
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "identityserver:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\vovko\\.nuget\\packages:/root/.nuget/packages"
+    - "D:\\dev\\A_LEVEL\\microProject\\microProject\\IdentityServer\\IdentityServer:/app:rw"
+    - "D:\\dev\\A_LEVEL\\microProject\\microProject:/src:rw"
+    working_dir: "/app"

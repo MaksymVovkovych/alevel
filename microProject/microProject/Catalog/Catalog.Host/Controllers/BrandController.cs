@@ -1,13 +1,14 @@
 ﻿using Catalog.Host.Data.Entity;
 using Catalog.Host.Mapping;
 using Catalog.Host.Services.Interfaces.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Catalog.Host.Controllers;
 
 
 
-
+[Authorize(Policy = "AuthenteficatedUser")]
 [ApiController]
 [Route("[controller]")]
 public class BrandController : ControllerBase
@@ -20,6 +21,7 @@ public class BrandController : ControllerBase
     }
     
     [HttpGet]
+    [AllowAnonymous]
     public async Task<IQueryable<Brand>> GetBrands()
     {
         return _brandService.GetBrands();

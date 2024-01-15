@@ -12,15 +12,34 @@ namespace IdentityServer
         public static IEnumerable<IdentityResource> IdentityResources =>
             new IdentityResource[]
             {
-                new IdentityResources.OpenId()
+                new IdentityResources.OpenId(),
+                new IdentityResources.Profile()
             };
 
         public static IEnumerable<ApiScope> ApiScopes =>
-            new ApiScope[]
-                { };
+            new []
+            {
+                new ApiScope("catalog", "WebApi")
+            };
 
         public static IEnumerable<Client> Clients =>
             new Client[]
-                { };
+            {
+                new Client
+                {
+                    ClientId = "catalogswaggerui",
+                    ClientName = "Catalog Swagger UI",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
+
+                    RedirectUris = { "http://localhost:5000/swagger/oauth2-redirect.html" },
+                    PostLogoutRedirectUris = { "http://localhost:5000/swagger/" },
+
+                    AllowedScopes =
+                    {
+                        "catalog"
+                    }
+                }
+            };
     }
 }
